@@ -1,0 +1,32 @@
+{
+  "name": "components",
+  "version": "0.0.1",
+  "author": {
+    "name": "Dominik Seifert",
+    "email": "contactdomisemail@gmail.com",
+    "url": "http://www.linkedin.com/pub/dominik-seifert/54/63b/8b6"
+  },
+  "main": "./index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Domiii/components.js"
+  },
+  "dependencies": {
+    "squishy": "*",
+    "mime": "*"
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+  },
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "description": "The components framework delivers RPC + asset management + some other good stuff for Host <-> Client RPC.",
+  "bugs": {
+    "url": "https://github.com/Domiii/components.js/issues"
+  },
+  "homepage": "https://github.com/Domiii/components.js"
+}
