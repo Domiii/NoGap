@@ -1,0 +1,334 @@
+[2014-05-30 18:56:56.616] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/testapp/app.js:32)[39m
+[2014-05-30 18:56:56.625] [INFO] default - BJT Online is now up and running at port 8080 [90m(d:/code/mine/js/testapp/app.js:64)[39m
+[2014-05-30 18:57:01.036] [WARN] default - Invalid request (404): Error: Not Found: /
+    at Layer.app.use.status [as handle] (d:\code\mine\js\testapp\app.js:41:15)
+    at trim_prefix (d:\code\mine\js\testapp\node_modules\express\lib\router\index.js:230:15)
+    at c (d:\code\mine\js\testapp\node_modules\express\lib\router\index.js:198:9)
+    at Function.proto.process_params (d:\code\mine\js\testapp\node_modules\express\lib\router\index.js:253:12)
+    at next (d:\code\mine\js\testapp\node_modules\express\lib\router\index.js:189:19)
+    at Layer.expressInit [as handle] (d:\code\mine\js\testapp\node_modules\express\lib\middleware\init.js:23:5)
+    at trim_prefix (d:\code\mine\js\testapp\node_modules\express\lib\router\index.js:230:15)
+    at c (d:\code\mine\js\testapp\node_modules\express\lib\router\index.js:198:9)
+    at Function.proto.process_params (d:\code\mine\js\testapp\node_modules\express\lib\router\index.js:253:12)
+    at next (d:\code\mine\js\testapp\node_modules\express\lib\router\index.js:189:19) [90m(d:/code/mine/js/testapp/app.js:50)[39m
+[2014-05-30 21:29:17.479] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 21:29:17.549] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 21:31:10.260] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 21:31:13.072] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 21:31:13.144] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 21:31:14.485] [INFO] default - Main: view [90m(d:/code/mine/js/components.js/lib/Assets.js:303)[39m
+[2014-05-30 21:31:14.556] [INFO] default - Main: view [90m(d:/code/mine/js/components.js/lib/Assets.js:303)[39m
+[2014-05-30 21:31:14.570] [INFO] default - Main: view [90m(d:/code/mine/js/components.js/lib/Assets.js:303)[39m
+[2014-05-30 21:31:14.573] [INFO] default - Main: view [90m(d:/code/mine/js/components.js/lib/Assets.js:303)[39m
+[2014-05-30 21:31:14.576] [INFO] default - Main: view [90m(d:/code/mine/js/components.js/lib/Assets.js:303)[39m
+[2014-05-30 21:31:14.580] [INFO] default - Main: view [90m(d:/code/mine/js/components.js/lib/Assets.js:303)[39m
+[2014-05-30 21:31:14.583] [INFO] default - Main: view [90m(d:/code/mine/js/components.js/lib/Assets.js:303)[39m
+[2014-05-30 21:35:25.158] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 21:35:25.164] [INFO] default - Shutdown complete. Bye bye! [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:53)[39m
+[2014-05-30 21:35:26.400] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 21:35:26.463] [INFO] default - d:\code\mine\js\components.js\testapp\components\css\normalize.css [90m(d:/code/mine/js/components.js/lib/Assets.js:193)[39m
+[2014-05-30 21:35:26.466] [INFO] default - d:\code\mine\js\components.js\testapp\components\css\styles.css [90m(d:/code/mine/js/components.js/lib/Assets.js:193)[39m
+[2014-05-30 21:35:26.472] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 21:35:40.991] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 21:35:43.225] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 21:35:43.294] [INFO] default - css/normalize.css [90m(d:/code/mine/js/components.js/lib/Assets.js:193)[39m
+[2014-05-30 21:35:43.295] [INFO] default - css/styles.css [90m(d:/code/mine/js/components.js/lib/Assets.js:193)[39m
+[2014-05-30 21:35:43.301] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 21:35:43.945] [INFO] default - Main: view [90m(d:/code/mine/js/components.js/lib/Assets.js:304)[39m
+[2014-05-30 21:35:44.000] [INFO] default - Main: view [90m(d:/code/mine/js/components.js/lib/Assets.js:304)[39m
+[2014-05-30 21:35:44.019] [INFO] default - Main: view [90m(d:/code/mine/js/components.js/lib/Assets.js:304)[39m
+[2014-05-30 21:35:44.022] [INFO] default - Main: view [90m(d:/code/mine/js/components.js/lib/Assets.js:304)[39m
+[2014-05-30 21:35:44.025] [INFO] default - Main: view [90m(d:/code/mine/js/components.js/lib/Assets.js:304)[39m
+[2014-05-30 21:35:44.029] [INFO] default - Main: view [90m(d:/code/mine/js/components.js/lib/Assets.js:304)[39m
+[2014-05-30 21:35:44.033] [INFO] default - Main: view [90m(d:/code/mine/js/components.js/lib/Assets.js:304)[39m
+[2014-05-30 21:37:31.895] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 21:37:33.183] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 21:37:33.247] [INFO] default - //ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js [90m(d:/code/mine/js/components.js/lib/Assets.js:174)[39m
+[2014-05-30 21:37:33.248] [INFO] default - //ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-route.js [90m(d:/code/mine/js/components.js/lib/Assets.js:174)[39m
+[2014-05-30 21:37:33.249] [INFO] default - //ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js [90m(d:/code/mine/js/components.js/lib/Assets.js:174)[39m
+[2014-05-30 21:37:33.250] [INFO] default - //netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js [90m(d:/code/mine/js/components.js/lib/Assets.js:174)[39m
+[2014-05-30 21:37:33.251] [INFO] default - ../node_modules/squishy/squishy [90m(d:/code/mine/js/components.js/lib/Assets.js:174)[39m
+[2014-05-30 21:37:33.251] [INFO] default - ../node_modules/squishy/squishy.util [90m(d:/code/mine/js/components.js/lib/Assets.js:174)[39m
+[2014-05-30 21:37:33.251] [INFO] default - ../node_modules/squishy/squishy.domUtil [90m(d:/code/mine/js/components.js/lib/Assets.js:174)[39m
+[2014-05-30 21:37:33.252] [INFO] default - ../node_modules/squishy/stacktrace [90m(d:/code/mine/js/components.js/lib/Assets.js:174)[39m
+[2014-05-30 21:37:33.253] [INFO] default - ../node_modules/squishy/squishy.Stacktrace [90m(d:/code/mine/js/components.js/lib/Assets.js:174)[39m
+[2014-05-30 21:37:33.254] [INFO] default - ../node_modules/squishy/squishy.CodeBuilder [90m(d:/code/mine/js/components.js/lib/Assets.js:174)[39m
+[2014-05-30 21:37:33.255] [INFO] default - //netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css [90m(d:/code/mine/js/components.js/lib/Assets.js:174)[39m
+[2014-05-30 21:37:33.256] [INFO] default - //netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css [90m(d:/code/mine/js/components.js/lib/Assets.js:174)[39m
+[2014-05-30 21:37:33.256] [INFO] default - css/normalize.css [90m(d:/code/mine/js/components.js/lib/Assets.js:174)[39m
+[2014-05-30 21:37:33.257] [INFO] default - css/styles.css [90m(d:/code/mine/js/components.js/lib/Assets.js:174)[39m
+[2014-05-30 21:37:33.263] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 21:37:33.895] [INFO] default - Error: Main: view
+    at iterator (d:\code\mine\js\components.js\lib\Assets.js:304:41)
+    at iterator (d:\code\mine\js\components.js\lib\Assets.js:91:29)
+    at Object.forEachAsset (d:\code\mine\js\components.js\lib\Assets.js:104:25)
+    at Object.getFileAssets (d:\code\mine\js\components.js\lib\Assets.js:309:22)
+    at Object.getClientAssets (d:\code\mine\js\components.js\lib\Assets.js:74:32)
+    at Object.Private.bootstrapNewClientComponents (d:\code\mine\js\components.js\lib\ComponentBootstrap.js:242:59)
+    at Object.Public.requestClientComponents (d:\code\mine\js\components.js\lib\ComponentBootstrap.js:316:26)
+    at Object.Private.requestClientComponentsFromHost (d:\code\mine\js\components.js\lib\ComponentBootstrap.js:278:26)
+    at Object.requestClientComponents (d:\code\mine\js\components.js\lib\ComponentTools.js:25:58)
+    at Object.Private.onNewClient (d:\code\mine\js\components.js\testapp\components\Main.js:63:32) [90m(d:/code/mine/js/components.js/lib/Assets.js:304)[39m
+[2014-05-30 21:37:33.966] [INFO] default - Error: Main: view
+    at iterator (d:\code\mine\js\components.js\lib\Assets.js:304:41)
+    at iterator (d:\code\mine\js\components.js\lib\Assets.js:91:29)
+    at Object.forEachAsset (d:\code\mine\js\components.js\lib\Assets.js:104:25)
+    at Object.getFileAssets (d:\code\mine\js\components.js\lib\Assets.js:309:22)
+    at Object.getClientAssets (d:\code\mine\js\components.js\lib\Assets.js:74:32)
+    at Object.Private.bootstrapNewClientComponents (d:\code\mine\js\components.js\lib\ComponentBootstrap.js:242:59)
+    at Object.Public.requestClientComponents (d:\code\mine\js\components.js\lib\ComponentBootstrap.js:316:26)
+    at Object.Private.requestClientComponentsFromHost (d:\code\mine\js\components.js\lib\ComponentBootstrap.js:278:26)
+    at Object.requestClientComponents (d:\code\mine\js\components.js\lib\ComponentTools.js:25:58)
+    at Object.Private.onNewClient (d:\code\mine\js\components.js\testapp\components\Main.js:63:32) [90m(d:/code/mine/js/components.js/lib/Assets.js:304)[39m
+[2014-05-30 21:37:33.988] [INFO] default - Error: Main: view
+    at iterator (d:\code\mine\js\components.js\lib\Assets.js:304:41)
+    at iterator (d:\code\mine\js\components.js\lib\Assets.js:91:29)
+    at Object.forEachAsset (d:\code\mine\js\components.js\lib\Assets.js:104:25)
+    at Object.getFileAssets (d:\code\mine\js\components.js\lib\Assets.js:309:22)
+    at Object.getClientAssets (d:\code\mine\js\components.js\lib\Assets.js:74:32)
+    at Object.Private.bootstrapNewClientComponents (d:\code\mine\js\components.js\lib\ComponentBootstrap.js:242:59)
+    at Object.Public.requestClientComponents (d:\code\mine\js\components.js\lib\ComponentBootstrap.js:316:26)
+    at Object.Private.requestClientComponentsFromHost (d:\code\mine\js\components.js\lib\ComponentBootstrap.js:278:26)
+    at Object.requestClientComponents (d:\code\mine\js\components.js\lib\ComponentTools.js:25:58)
+    at Object.Private.onNewClient (d:\code\mine\js\components.js\testapp\components\Main.js:63:32) [90m(d:/code/mine/js/components.js/lib/Assets.js:304)[39m
+[2014-05-30 21:37:34.015] [INFO] default - Error: Main: view
+    at iterator (d:\code\mine\js\components.js\lib\Assets.js:304:41)
+    at iterator (d:\code\mine\js\components.js\lib\Assets.js:91:29)
+    at Object.forEachAsset (d:\code\mine\js\components.js\lib\Assets.js:104:25)
+    at Object.getFileAssets (d:\code\mine\js\components.js\lib\Assets.js:309:22)
+    at Object.getClientAssets (d:\code\mine\js\components.js\lib\Assets.js:74:32)
+    at Object.Private.bootstrapNewClientComponents (d:\code\mine\js\components.js\lib\ComponentBootstrap.js:242:59)
+    at Object.Public.requestClientComponents (d:\code\mine\js\components.js\lib\ComponentBootstrap.js:316:26)
+    at Object.Private.requestClientComponentsFromHost (d:\code\mine\js\components.js\lib\ComponentBootstrap.js:278:26)
+    at Object.requestClientComponents (d:\code\mine\js\components.js\lib\ComponentTools.js:25:58)
+    at Object.Private.onNewClient (d:\code\mine\js\components.js\testapp\components\Main.js:63:32) [90m(d:/code/mine/js/components.js/lib/Assets.js:304)[39m
+[2014-05-30 21:37:34.028] [INFO] default - Error: Main: view
+    at iterator (d:\code\mine\js\components.js\lib\Assets.js:304:41)
+    at iterator (d:\code\mine\js\components.js\lib\Assets.js:91:29)
+    at Object.forEachAsset (d:\code\mine\js\components.js\lib\Assets.js:104:25)
+    at Object.getFileAssets (d:\code\mine\js\components.js\lib\Assets.js:309:22)
+    at Object.getClientAssets (d:\code\mine\js\components.js\lib\Assets.js:74:32)
+    at Object.Private.bootstrapNewClientComponents (d:\code\mine\js\components.js\lib\ComponentBootstrap.js:242:59)
+    at Object.Public.requestClientComponents (d:\code\mine\js\components.js\lib\ComponentBootstrap.js:316:26)
+    at Object.Private.requestClientComponentsFromHost (d:\code\mine\js\components.js\lib\ComponentBootstrap.js:278:26)
+    at Object.requestClientComponents (d:\code\mine\js\components.js\lib\ComponentTools.js:25:58)
+    at Object.Private.onNewClient (d:\code\mine\js\components.js\testapp\components\Main.js:63:32) [90m(d:/code/mine/js/components.js/lib/Assets.js:304)[39m
+[2014-05-30 21:37:34.041] [INFO] default - Error: Main: view
+    at iterator (d:\code\mine\js\components.js\lib\Assets.js:304:41)
+    at iterator (d:\code\mine\js\components.js\lib\Assets.js:91:29)
+    at Object.forEachAsset (d:\code\mine\js\components.js\lib\Assets.js:104:25)
+    at Object.getFileAssets (d:\code\mine\js\components.js\lib\Assets.js:309:22)
+    at Object.getClientAssets (d:\code\mine\js\components.js\lib\Assets.js:74:32)
+    at Object.Private.bootstrapNewClientComponents (d:\code\mine\js\components.js\lib\ComponentBootstrap.js:242:59)
+    at Object.Public.requestClientComponents (d:\code\mine\js\components.js\lib\ComponentBootstrap.js:316:26)
+    at Object.Private.requestClientComponentsFromHost (d:\code\mine\js\components.js\lib\ComponentBootstrap.js:278:26)
+    at Object.requestClientComponents (d:\code\mine\js\components.js\lib\ComponentTools.js:25:58)
+    at Object.Private.onNewClient (d:\code\mine\js\components.js\testapp\components\Main.js:63:32) [90m(d:/code/mine/js/components.js/lib/Assets.js:304)[39m
+[2014-05-30 21:37:34.055] [INFO] default - Error: Main: view
+    at iterator (d:\code\mine\js\components.js\lib\Assets.js:304:41)
+    at iterator (d:\code\mine\js\components.js\lib\Assets.js:91:29)
+    at Object.forEachAsset (d:\code\mine\js\components.js\lib\Assets.js:104:25)
+    at Object.getFileAssets (d:\code\mine\js\components.js\lib\Assets.js:309:22)
+    at Object.getClientAssets (d:\code\mine\js\components.js\lib\Assets.js:74:32)
+    at Object.Private.bootstrapNewClientComponents (d:\code\mine\js\components.js\lib\ComponentBootstrap.js:242:59)
+    at Object.Public.requestClientComponents (d:\code\mine\js\components.js\lib\ComponentBootstrap.js:316:26)
+    at Object.Private.requestClientComponentsFromHost (d:\code\mine\js\components.js\lib\ComponentBootstrap.js:278:26)
+    at Object.requestClientComponents (d:\code\mine\js\components.js\lib\ComponentTools.js:25:58)
+    at Object.Private.onNewClient (d:\code\mine\js\components.js\testapp\components\Main.js:63:32) [90m(d:/code/mine/js/components.js/lib/Assets.js:304)[39m
+[2014-05-30 21:38:18.440] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 21:38:18.447] [INFO] default - Shutdown complete. Bye bye! [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:53)[39m
+[2014-05-30 21:38:19.709] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 21:38:19.773] [INFO] default - //ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js [90m(d:/code/mine/js/components.js/lib/Assets.js:174)[39m
+[2014-05-30 21:38:19.775] [INFO] default - //ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-route.js [90m(d:/code/mine/js/components.js/lib/Assets.js:174)[39m
+[2014-05-30 21:38:19.776] [INFO] default - //ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js [90m(d:/code/mine/js/components.js/lib/Assets.js:174)[39m
+[2014-05-30 21:38:19.777] [INFO] default - //netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js [90m(d:/code/mine/js/components.js/lib/Assets.js:174)[39m
+[2014-05-30 21:38:19.778] [INFO] default - ../node_modules/squishy/squishy [90m(d:/code/mine/js/components.js/lib/Assets.js:174)[39m
+[2014-05-30 21:38:19.779] [INFO] default - ../node_modules/squishy/squishy.util [90m(d:/code/mine/js/components.js/lib/Assets.js:174)[39m
+[2014-05-30 21:38:19.780] [INFO] default - ../node_modules/squishy/squishy.domUtil [90m(d:/code/mine/js/components.js/lib/Assets.js:174)[39m
+[2014-05-30 21:38:19.781] [INFO] default - ../node_modules/squishy/stacktrace [90m(d:/code/mine/js/components.js/lib/Assets.js:174)[39m
+[2014-05-30 21:38:19.782] [INFO] default - ../node_modules/squishy/squishy.Stacktrace [90m(d:/code/mine/js/components.js/lib/Assets.js:174)[39m
+[2014-05-30 21:38:19.783] [INFO] default - ../node_modules/squishy/squishy.CodeBuilder [90m(d:/code/mine/js/components.js/lib/Assets.js:174)[39m
+[2014-05-30 21:38:19.784] [INFO] default - //netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css [90m(d:/code/mine/js/components.js/lib/Assets.js:174)[39m
+[2014-05-30 21:38:19.785] [INFO] default - //netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css [90m(d:/code/mine/js/components.js/lib/Assets.js:174)[39m
+[2014-05-30 21:38:19.786] [INFO] default - css/normalize.css [90m(d:/code/mine/js/components.js/lib/Assets.js:174)[39m
+[2014-05-30 21:38:19.788] [INFO] default - css/styles.css [90m(d:/code/mine/js/components.js/lib/Assets.js:174)[39m
+[2014-05-30 21:38:19.794] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 21:39:37.729] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 21:39:39.090] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 21:39:39.158] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 21:39:40.949] [INFO] default - Main [90m(d:/code/mine/js/components.js/lib/Assets.js:256)[39m
+[2014-05-30 21:39:41.008] [INFO] default - Main [90m(d:/code/mine/js/components.js/lib/Assets.js:256)[39m
+[2014-05-30 21:39:41.025] [INFO] default - Main [90m(d:/code/mine/js/components.js/lib/Assets.js:256)[39m
+[2014-05-30 21:39:41.028] [INFO] default - Main [90m(d:/code/mine/js/components.js/lib/Assets.js:256)[39m
+[2014-05-30 21:39:41.030] [INFO] default - Main [90m(d:/code/mine/js/components.js/lib/Assets.js:256)[39m
+[2014-05-30 21:39:41.034] [INFO] default - Main [90m(d:/code/mine/js/components.js/lib/Assets.js:256)[39m
+[2014-05-30 21:39:41.038] [INFO] default - Main [90m(d:/code/mine/js/components.js/lib/Assets.js:256)[39m
+[2014-05-30 21:40:46.472] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 21:40:46.478] [INFO] default - Shutdown complete. Bye bye! [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:53)[39m
+[2014-05-30 21:40:47.639] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 21:40:47.708] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 21:40:49.269] [INFO] default - Main [90m(d:/code/mine/js/components.js/lib/Assets.js:250)[39m
+[2014-05-30 21:40:49.331] [INFO] default - Main [90m(d:/code/mine/js/components.js/lib/Assets.js:250)[39m
+[2014-05-30 21:40:49.346] [INFO] default - Main [90m(d:/code/mine/js/components.js/lib/Assets.js:250)[39m
+[2014-05-30 21:40:49.368] [INFO] default - Main [90m(d:/code/mine/js/components.js/lib/Assets.js:250)[39m
+[2014-05-30 21:40:49.379] [INFO] default - Main [90m(d:/code/mine/js/components.js/lib/Assets.js:250)[39m
+[2014-05-30 21:40:49.389] [INFO] default - Main [90m(d:/code/mine/js/components.js/lib/Assets.js:250)[39m
+[2014-05-30 21:40:49.403] [INFO] default - Main [90m(d:/code/mine/js/components.js/lib/Assets.js:250)[39m
+[2014-05-30 21:42:38.363] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 21:42:39.639] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 21:42:39.710] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 21:43:03.199] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 21:43:04.542] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 21:43:04.612] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 21:43:06.020] [ERROR] default - Client - Called `requestClientComponents` with unknown component: t - Available components are: Main,Home,Guest [90m(d:/code/mine/js/components.js/lib/CommandProxy.js:50)[39m
+[2014-05-30 21:43:14.560] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 21:43:15.788] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 21:43:15.859] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 21:43:32.417] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 21:43:33.680] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 21:43:33.751] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 21:43:36.424] [ERROR] default - Cannot parse `Assets.Files` of component `Guest`: Error: Could not find file `guest.html` for component `Guest`. It was located neither relative to the component, nor in the public folder.
+    at iterator (d:\code\mine\js\components.js\lib\Assets.js:291:51)
+    at iterator (d:\code\mine\js\components.js\lib\Assets.js:91:29)
+    at Object.forEachAsset (d:\code\mine\js\components.js\lib\Assets.js:104:25)
+    at Object.getFileAssets (d:\code\mine\js\components.js\lib\Assets.js:307:22)
+    at Object.getClientAssets (d:\code\mine\js\components.js\lib\Assets.js:74:33)
+    at Object.Private.bootstrapNewClientComponents (d:\code\mine\js\components.js\lib\ComponentBootstrap.js:242:59)
+    at Object.Public.requestClientComponents (d:\code\mine\js\components.js\lib\ComponentBootstrap.js:316:26)
+    at Object.HostDef.Private.executeClientCommandsNow (d:\code\mine\js\components.js\lib\CommandProxy.js:125:56)
+    at Object.Private.executeCommandRequestNow (d:\code\mine\js\components.js\lib\ComponentCommunications.js:309:53)
+    at Object.<anonymous> (d:\code\mine\js\components.js\lib\ComponentCommunications.js:220:30) [90m(d:/code/mine/js/components.js/lib/Assets.js:94)[39m
+[2014-05-30 21:44:23.921] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 21:44:23.926] [INFO] default - Shutdown complete. Bye bye! [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:53)[39m
+[2014-05-30 21:44:25.124] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 21:44:25.192] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 21:44:26.500] [ERROR] default - Cannot parse `Assets.Files` of component `Guest`: Error: Could not find file `guest.html` for component `Guest`. It was located neither relative to the component, nor in the public folder.
+    at iterator (d:\code\mine\js\components.js\lib\Assets.js:291:51)
+    at iterator (d:\code\mine\js\components.js\lib\Assets.js:91:29)
+    at Object.forEachAsset (d:\code\mine\js\components.js\lib\Assets.js:104:25)
+    at Object.getFileAssets (d:\code\mine\js\components.js\lib\Assets.js:307:22)
+    at Object.getClientAssets (d:\code\mine\js\components.js\lib\Assets.js:74:33)
+    at Object.Private.bootstrapNewClientComponents (d:\code\mine\js\components.js\lib\ComponentBootstrap.js:242:59)
+    at Object.Public.requestClientComponents (d:\code\mine\js\components.js\lib\ComponentBootstrap.js:316:26)
+    at Object.HostDef.Private.executeClientCommandsNow (d:\code\mine\js\components.js\lib\CommandProxy.js:125:56)
+    at Object.Private.executeCommandRequestNow (d:\code\mine\js\components.js\lib\ComponentCommunications.js:309:53)
+    at Object.<anonymous> (d:\code\mine\js\components.js\lib\ComponentCommunications.js:220:30) [90m(d:/code/mine/js/components.js/lib/Assets.js:94)[39m
+[2014-05-30 21:44:51.883] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 21:44:53.194] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 21:44:53.263] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 21:45:25.252] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 21:45:26.458] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 21:45:26.526] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 21:45:46.899] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 21:45:46.904] [INFO] default - Shutdown complete. Bye bye! [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:53)[39m
+[2014-05-30 21:45:48.081] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 21:45:48.151] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 21:47:30.210] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 21:47:31.367] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 21:47:31.436] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 21:48:19.513] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 21:48:19.517] [INFO] default - Shutdown complete. Bye bye! [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:53)[39m
+[2014-05-30 21:48:20.667] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 21:48:20.738] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 21:50:09.549] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 21:50:10.837] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 21:50:10.905] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 21:51:34.688] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 21:51:34.693] [INFO] default - Shutdown complete. Bye bye! [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:53)[39m
+[2014-05-30 21:51:35.936] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 21:51:36.006] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 21:52:29.295] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 21:52:30.487] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 21:52:30.558] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 21:52:44.367] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 21:52:45.581] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 21:52:45.649] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 21:57:26.530] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 21:57:26.536] [INFO] default - Shutdown complete. Bye bye! [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:53)[39m
+[2014-05-30 21:57:27.718] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 21:57:27.785] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 21:58:08.356] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 21:58:08.362] [INFO] default - Shutdown complete. Bye bye! [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:53)[39m
+[2014-05-30 21:58:09.593] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 21:58:09.662] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 21:58:29.181] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 21:58:29.187] [INFO] default - Shutdown complete. Bye bye! [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:53)[39m
+[2014-05-30 21:58:30.460] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 21:58:30.528] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 21:58:51.937] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 21:58:53.179] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 21:58:53.250] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 22:07:02.555] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 22:07:03.749] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 22:07:03.817] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 22:07:28.839] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 22:07:29.949] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 22:07:30.021] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 22:08:22.668] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 22:08:23.845] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 22:08:23.913] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 22:12:59.653] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 22:12:59.659] [INFO] default - Shutdown complete. Bye bye! [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:53)[39m
+[2014-05-30 22:13:00.892] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 22:13:00.966] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 22:13:29.005] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 22:13:30.177] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 22:13:30.248] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 22:14:03.196] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 22:14:04.464] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 22:14:04.534] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 22:23:14.321] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 22:23:15.579] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 22:23:15.648] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 22:24:07.260] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 22:24:07.265] [INFO] default - Shutdown complete. Bye bye! [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:53)[39m
+[2014-05-30 22:24:08.503] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 22:24:08.571] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 22:26:09.241] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 22:26:10.398] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 22:26:10.466] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 22:26:13.654] [ERROR] default - TypeError: Object Client has no method 'start'
+    at Object.Public.tryLogin (d:\code\mine\js\components.js\testapp\components\Guest.js:46:33)
+    at Object.HostDef.Private.executeClientCommandsNow (d:\code\mine\js\components.js\lib\CommandProxy.js:125:56)
+    at Object.Private.executeCommandRequestNow (d:\code\mine\js\components.js\lib\ComponentCommunications.js:309:53)
+    at Object.<anonymous> (d:\code\mine\js\components.js\lib\ComponentCommunications.js:220:30)
+    at squishy.createClass.executeInOrder (d:\code\mine\js\components.js\lib\ComponentCommunications.js:111:25)
+    at Object.Private.executeCommandRequest (d:\code\mine\js\components.js\lib\ComponentCommunications.js:223:32)
+    at Object.<anonymous> (d:\code\mine\js\components.js\lib\ComponentCommunications.js:538:63)
+    at IncomingMessage.EventEmitter.emit (events.js:92:17)
+    at _stream_readable.js:920:16
+    at process._tickCallback (node.js:415:13) [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:38)[39m
+[2014-05-30 22:26:27.954] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 22:26:28.023] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 22:27:46.238] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 22:27:46.243] [INFO] default - Shutdown complete. Bye bye! [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:53)[39m
+[2014-05-30 22:27:47.350] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 22:27:47.420] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 22:28:35.638] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 22:28:36.784] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 22:28:36.850] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 22:28:58.849] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 22:29:00.036] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 22:29:00.104] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 22:29:11.223] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 22:29:11.229] [INFO] default - Shutdown complete. Bye bye! [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:53)[39m
+[2014-05-30 22:29:12.364] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 22:29:12.434] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 22:29:22.850] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 22:29:24.074] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 22:29:24.141] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 22:30:36.046] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 22:30:36.052] [INFO] default - Shutdown complete. Bye bye! [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:53)[39m
+[2014-05-30 22:30:37.187] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 22:30:37.256] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 22:31:18.834] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 22:31:18.840] [INFO] default - Shutdown complete. Bye bye! [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:53)[39m
+[2014-05-30 22:31:20.046] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 22:31:20.118] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 22:31:46.933] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 22:31:48.106] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 22:31:48.177] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 22:33:07.950] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-30 22:33:09.095] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
+[2014-05-30 22:33:09.166] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
+[2014-05-30 22:33:25.684] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m

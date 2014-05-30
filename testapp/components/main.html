@@ -1,0 +1,12 @@
+<div class="fill" ng-app="app" ng-controller="mainCtrl">
+
+  <!-- This is where we would usually place the nav menu -->
+
+  <!-- Content -->
+  <div class="container fill">
+    <!-- Pages -->
+    <div class="container" ng-repeat="pageState in pageStates">
+      <div class="fill" ng-show="pageState.active" ng-include="pageState.name"></div>
+    </div>
+  </div>
+</div>
