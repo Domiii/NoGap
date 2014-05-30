@@ -1,4 +1,4 @@
-components.js
+NoGap
 =============
 
-The components framework delivers a RPC + asset management + some other good stuff for Host &lt;-> Client RPC.
+The NoGap framework delivers RPC + asset management + some other good stuff for Host &lt;-> Client communication.

@@ -1,6 +1,6 @@
 {
-  "name": "components",
-  "version": "0.0.1",
+  "name": "nogap",
+  "version": "0.1.0",
   "author": {
     "name": "Dominik Seifert",
     "email": "contactdomisemail@gmail.com",
@@ -9,7 +9,7 @@
   "main": "./index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Domiii/components.js"
+    "url": "https://github.com/Domiii/NoGap"
   },
   "dependencies": {
     "squishy": "*",
@@ -24,9 +24,9 @@
   },
   "license": "MIT",
   "readmeFilename": "README.md",
-  "description": "The components framework delivers RPC + asset management + some other good stuff for Host <-> Client RPC.",
+  "description": "The NoGap framework delivers RPC + asset management + some other good stuff for Host <-> Client comunication.",
   "bugs": {
-    "url": "https://github.com/Domiii/components.js/issues"
+    "url": "https://github.com/Domiii/NoGap/issues"
   },
-  "homepage": "https://github.com/Domiii/components.js"
+  "homepage": "https://github.com/Domiii/NoGap"
 }
