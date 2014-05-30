@@ -332,3 +332,7 @@
 [2014-05-30 22:33:09.095] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/components.js/testapp/app.js:25)[39m
 [2014-05-30 22:33:09.166] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/components.js/testapp/app.js:96)[39m
 [2014-05-30 22:33:25.684] [INFO] default - Shutting down... [90m(d:/code/mine/js/components.js/testapp/lib/maintenance.js:40)[39m
+[2014-05-31 02:35:04.154] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/NoGap/testapp/app.js:25)[39m
+[2014-05-31 02:35:04.222] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/NoGap/testapp/app.js:96)[39m
+[2014-05-31 02:35:18.218] [INFO] default - Shutting down... [90m(d:/code/mine/js/NoGap/testapp/lib/maintenance.js:43)[39m
+[2014-05-31 02:35:18.221] [INFO] default - Shutdown complete. Bye bye! [90m(d:/code/mine/js/NoGap/testapp/lib/maintenance.js:56)[39m

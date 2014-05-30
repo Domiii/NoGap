@@ -1,5 +1,5 @@
 /**
- * This file provides the public interface for accessing components functionality.
+ * This file provides the public interface for accessing NoGap functionality.
  */
 /*jslint node: true */
 "use strict";
