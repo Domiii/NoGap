@@ -44,6 +44,27 @@
   text-align: center;
 }
 
+/* ########################################################################################## */
+/* Footer */
+/* see: http://stackoverflow.com/questions/21324395/bootstrap-3-flush-footer-to-bottom-not-fixed */
+
+* {
+    margin: 0;
+}
+html, body, .content {
+    height: 100%;
+}
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -80px; /* the bottom margin is the negative value of the footer's height */
+}
+.footer, .push {
+    height: 80px; /* .push must be the same height as .footer */
+    font-size:1.5em;
+}
+
 
 /* ########################################################################################## */
 /* Misc */

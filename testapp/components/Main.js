@@ -58,7 +58,7 @@ module.exports = ComponentDef.component({
                     var session = this.Context.session;
 
                     // get userName & start app on client
-                    this.client.start(session.userName);
+                    this.client.start(session.userName, this.Context.clientAddr);
                 },
             }
         };
@@ -122,14 +122,16 @@ module.exports = ComponentDef.component({
                 }]);
             }]);
             
+
             // create main Angular controller:
             app.controller('mainCtrl',
                 ['$scope', '$templateCache', function($scope, $templateCache) {
                     // set page list
                     $scope.pageStates = pageStates;
 
-                    // set user & userName
+                    // set user info
                     $scope.userName = Instance.Main.userName;
+                    $scope.clientAddr = Instance.Main.clientAddr;
 
                     // remember $scope & $templateCache so we can lazily add partial templates later
                     mainScope = $scope;
@@ -245,7 +247,10 @@ module.exports = ComponentDef.component({
                  * This method is called after `initClient` was called.
                  * We don't put this code into `initClient` because `initClient` does not take arguments.
                  */
-                start: function(userName) {
+                start: function(userName, clientAddr) {
+                    // store client address
+                    this.clientAddr = clientAddr;
+
                     // set current user and select page to view correspondingly
                     this.onUserChanged(userName);
                 }

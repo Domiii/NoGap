@@ -1,6 +1,6 @@
 <div class="fullscreen_bg" ng-controller="homeCtrl">
-    <div class="alert alert-info">
-      Logged in as: {{userName}}
+    <div class="alert alert-success">
+      Successfully logged in as: {{userName}}
     </div>
     <a ng-disabled="busy" class="btn btn-lg btn-primary" ng-click="clickLogout()">
         Logout <span ng-style="{visibility: busy && 'visible' || 'hidden'}"><i class="fa fa-cog fa-spin"></i></span>

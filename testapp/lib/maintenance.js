@@ -8,9 +8,6 @@
 
 var appConfig = require('../appConfig');
 var process = require('process');
-//var squishy = require('squishy');
-
-
 
 
 /**
@@ -18,7 +15,7 @@ var process = require('process');
  */
 var maintenance = {
     events: {
-        exit: GLOBAL.squishy.createEvent()
+        exit: squishy.createEvent()
     }
 };
 

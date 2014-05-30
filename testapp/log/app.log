@@ -336,3 +336,21 @@
 [2014-05-31 02:35:04.222] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/NoGap/testapp/app.js:96)[39m
 [2014-05-31 02:35:18.218] [INFO] default - Shutting down... [90m(d:/code/mine/js/NoGap/testapp/lib/maintenance.js:43)[39m
 [2014-05-31 02:35:18.221] [INFO] default - Shutdown complete. Bye bye! [90m(d:/code/mine/js/NoGap/testapp/lib/maintenance.js:56)[39m
+[2014-05-31 02:54:26.827] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/NoGap/testapp/app.js:25)[39m
+[2014-05-31 02:54:26.894] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/NoGap/testapp/app.js:96)[39m
+[2014-05-31 02:54:30.122] [WARN] default - Invalid request (500): TypeError: Cannot set property 'clientAddr' of undefined
+    at Object.installComponentInstanceAndGetClientBootstrapCode (d:\code\mine\js\NoGap\lib\ComponentBootstrap.js:129:41)
+    at Object.handle (d:\code\mine\js\NoGap\lib\ComponentBootstrap.js:528:56)
+    at next_layer (d:\code\mine\js\NoGap\testapp\node_modules\express\lib\router\route.js:103:13)
+    at Route.dispatch (d:\code\mine\js\NoGap\testapp\node_modules\express\lib\router\route.js:107:5)
+    at c (d:\code\mine\js\NoGap\testapp\node_modules\express\lib\router\index.js:195:24)
+    at Function.proto.process_params (d:\code\mine\js\NoGap\testapp\node_modules\express\lib\router\index.js:253:12)
+    at next (d:\code\mine\js\NoGap\testapp\node_modules\express\lib\router\index.js:189:19)
+    at next_layer (d:\code\mine\js\NoGap\testapp\node_modules\express\lib\router\route.js:77:14)
+    at next_layer (d:\code\mine\js\NoGap\testapp\node_modules\express\lib\router\route.js:81:14)
+    at Route.dispatch (d:\code\mine\js\NoGap\testapp\node_modules\express\lib\router\route.js:107:5) [90m(d:/code/mine/js/NoGap/testapp/app.js:81)[39m
+[2014-05-31 02:54:57.794] [INFO] default - Shutting down... [90m(d:/code/mine/js/NoGap/testapp/lib/maintenance.js:40)[39m
+[2014-05-31 02:55:01.613] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/NoGap/testapp/app.js:25)[39m
+[2014-05-31 02:55:01.680] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/NoGap/testapp/app.js:96)[39m
+[2014-05-31 03:08:14.471] [INFO] default - Shutting down... [90m(d:/code/mine/js/NoGap/testapp/lib/maintenance.js:40)[39m
+[2014-05-31 03:08:14.474] [INFO] default - Shutdown complete. Bye bye! [90m(d:/code/mine/js/NoGap/testapp/lib/maintenance.js:53)[39m

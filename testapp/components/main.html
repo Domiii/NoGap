@@ -1,12 +1,21 @@
-<div class="fill" ng-app="app" ng-controller="mainCtrl">
+<div class="container content" ng-app="app" ng-controller="mainCtrl">
+  <div class="wrapper">
+    <!-- This is where we would usually place the nav menu -->
 
-  <!-- This is where we would usually place the nav menu -->
-
-  <!-- Content -->
-  <div class="container fill">
-    <!-- Pages -->
-    <div class="container" ng-repeat="pageState in pageStates">
-      <div class="fill" ng-show="pageState.active" ng-include="pageState.name"></div>
+    <!-- Content -->
+    <div class="container fill">
+      <!-- Pages -->
+      <div class="container" ng-repeat="pageState in pageStates">
+        <div class="fill" ng-show="pageState.active" ng-include="pageState.name"></div>
+      </div>
+    </div>
+    
+    <div class="push"></div>  <!-- placeholder for footer -->
+  </div>
+  <!-- Footer -->
+  <div class="footer">
+    <div class="alert alert-info">
+      Your address is: {{clientAddr}}
     </div>
   </div>
 </div>
