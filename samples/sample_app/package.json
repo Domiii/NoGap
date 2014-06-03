@@ -1,0 +1,22 @@
+{
+  "name": "nogap-sample-app",
+  "version": "0.0.2",
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "files": {
+  	
+  },
+  "dependencies": {
+    "express": "~4.1.0",
+    "express-session": "^1.0.4",
+    "cookie-parser": "~1.0.1",
+
+    "process": "*",
+    "log4js": "*",
+    
+    "squishy": "*",
+    "nogap": "*"
+  }
+}
