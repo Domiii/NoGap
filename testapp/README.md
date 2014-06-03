@@ -16,3 +16,12 @@ This app showcases some of the major features of the `components` framework, inc
   * The client will only install the components that you want it to and when you want it to.
 * Basic asset management
   * You can easily get access to the contents of, or automatically include, files from the local or a designated public folder, by just naming an asset, and without having to worry about the security of other files outside the public folder.
+
+
+1. Getting started:
+    * `npm install nogap`
+    * `cd testapp`
+    * `npm install`
+    * `npm start`
+2. Connect to the test app
+3. Done!
