@@ -255,7 +255,7 @@ This folder contains UI-related components. That is UI controller and view code.
 
 ### `app.js`
 
-This defines your actual application. You can name it anything you want. Usually this file only does two things:
+This defines your actual application. You can name it anything you want. Usually, this file only does three things:
 
  1. Setup your app
  2. Start `NoGap`
@@ -263,7 +263,8 @@ This defines your actual application. You can name it anything you want. Usually
 
 Express is the standard Node way of starting a HTTP server and let clients connect.
 Once it is running you can connect to it with your browser on the specified port.
-NOTE: When using `NoGap` you will not need to work with express anymore. You can, but you are recommended to use components instead.
+
+NOTE: When using `NoGap` you will not need to work with express anymore (other than starting the server). You can use it, but you are recommended to use components instead.
 
 
 
@@ -310,7 +311,7 @@ There are more, optional parameters. Documentation will come soon.
 This is the standard `Node` configuration file. Here you can declare your app's basic metadata and, most importantly, your dependencies.
 If you need one of the thousands over thousands of publicly available `Node` modules, two steps are required:
 
- 1. add their name and your preferred version to `dependencies`
+ 1. Add their name and your preferred version to `dependencies`
  2. Run `npm install`
 
 Done. Now the new module is available in your code via:
@@ -319,7 +320,7 @@ Done. Now the new module is available in your code via:
 
 where `some-module` is the name you gave it in the package.json file.
 
-Check out [NPM JS]("https://www.npmjs.org/") to see all available modules.
+Check out [NPM JS](https://www.npmjs.org/) to see all available modules.
 
 
 
