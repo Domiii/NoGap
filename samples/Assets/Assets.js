@@ -5,51 +5,38 @@
 
 
 // ##########################################################################
-// Define TwoWayStreetAsync component
+// Define Asset component
 
 var NoGapDef = require('nogap').Def;
 
 NoGapDef.component({
-    Host: NoGapDef.defHost(function(Tools, Instance, Context) {
-        var iAttempt = 0;
+    Host: NoGapDef.defHost(function(SharedTools, Shared, SharedContext) { return {
+        Assets: {
+            AutoIncludes: {
+                js: [
+                    // jquery
+                    '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+                ],
 
-        return {
-            initHost: function() {
-                console.log('Host has initialized!');
+                css: [
+                    // bootstrap
+                    '//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'
+                ]
             },
 
-            Public: {
-                tellClientSomething: function() {
-                    this.Tools.keepOpen();
-
-                    // wait 500 milliseconds before replying
-                    setTimeout(function() {
-                        this.client.showHostMessage('We have exchanged ' + ++iAttempt + ' messages.');
-                        this.Tools.flush();
-                    }.bind(this), 500);
+            Files: {
+                string: {
+                    view: 'template.html'
                 }
             }
-        };
-    }),
+        }
+    };}),
 
-    Client: NoGapDef.defClient(function(Tools, Instance, Context) {
-        return {
-            initClient: function() {
-                window.clickMe = function() {
-                    document.body.innerHTML +='Button was clicked.<br />';
-                    this.host.tellClientSomething();
-                }.bind(this);
-
-                document.body.innerHTML += '<button onclick="window.clickMe();">Click Me!</button><br />';
-            },
-
-            Public: {
-                showHostMessage: function(msg) {
-                    document.body.innerHTML +='Server said: ' + msg + '<br />';
-                }
-            }
-        };
-    })
+    Client: NoGapDef.defClient(function(Tools, Instance, Context) { return {
+        initClient: function() {
+            document.body.innerHTML += this.assets.view;
+        }
+    };})
 });
 
 

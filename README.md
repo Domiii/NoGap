@@ -23,10 +23,10 @@ Installation
 * Done.
 
 
-[Samples](samples)
+[Samples](samples)<a name="samples"></a>
 =============
 
-# [HelloWorld](samples/HelloWorld)
+## [HelloWorld](samples/HelloWorld)
 
 ```js
 var NoGapDef = require('nogap').Def;
@@ -42,18 +42,18 @@ module.exports = NoGapDef.component({
 });
 ```
 
-What did we do?
+### Concepts
  * Get the NoGap module's `Def` helper: `var NoGapDef = require('nogap').Def;`
  * Define a new component: `NoGapDef.component({ ... });`
  * Add a `Client` definition to the component: `Client: NoGapDef.defClient(function(Tools, Instance, Context) { ... })`
  * Add `initClient` method  to `Client`
 
-What is the trick?
- * The `Client` object is automatically deployed to the client
+### What is the trick?
+ * The `Client` code is automatically deployed to the client
  * `initClient` is then automatically called on the client, right after installation
 
 
-# [TwoWayStreet](samples/TwoWayStreet)<a name="twowaystreet"></a>
+## [TwoWayStreet](samples/TwoWayStreet)<a name="twowaystreet"></a>
 
 ```js
 var NoGapDef = require('nogap').Def;
@@ -92,27 +92,23 @@ NoGapDef.component({
 });
 ```
 
-What did we do?
- * Get the NoGap module's `Def` helper: `var NoGapDef = require('nogap').Def;`
- * Define a new component: `NoGapDef.component({ ... });`
- * Add a `Host` definition to the component: `Host: NoGapDef.defHost(function(SharedTools, Shared, SharedContext) { ... })`
+### Concepts
  * Add a `Client` definition to the component: `Client: NoGapDef.defClient(function(Tools, Instance, Context) { ... })`
- * Add `Host.Public`
- * Add `Client.initClient`
- * Add `Client.Public`
+ * `Client.initClient`
+ * Add a `Host` definition to the component: `Host: NoGapDef.defHost(function(SharedTools, Shared, SharedContext) { ... })`
+ * `Host.Public`
+ * `Client.Public`
 
-How does it work?
- * When we open the browser, we see a button
- * When we click the button, we call `this.host.tellClientSomething`
-    * `this.host` gives us an object on which we can call `Public` methods on the host
-    * For example, we can call `tellClientSomething` which is a method that was defined in `Host.Public`
- * Once the host receives our request, it sends something back
- 	* `this.client.showHostMessage` is called to send something back
- 	* Similarly to `this.host` on the client side, `this.client` gives access to the client's `Public` methods
- * Finally, the `showHostMessage` is called on the client side and shows us the message sent by the host
+### What is the trick?
+ * `this.host` gives us an object on which we can call `Public` methods on the host
+ 	* For example, we can call `tellClientSomething` which is a method that was defined in `Host.Public`
+ * Once the host receives our request, it calls `this.client.showHostMessage`
+ * Note:
+ 	* Client: `this.host` vs.
+ 	* Host: `this.client`
 
 
-# [TwoWayStreetAsync](samples/TwoWayStreetAsync)
+## [TwoWayStreetAsync](samples/TwoWayStreetAsync)
 
 Now that our code keeps growing and you are starting to get the picture, let us just focus on code snippets from now on.
 
@@ -131,24 +127,91 @@ tellClientSomething: function() {
 }
 ```
 
-What did we do?
- * Get the NoGap module's `Def` helper: `var NoGapDef = require('nogap').Def;`
- * Define a new component: `NoGapDef.component({ ... });`
- * Add a `Host` definition to the component: `Host: NoGapDef.defHost(function(SharedTools, Shared, SharedContext) { ... })`
- * Add a `Client` definition to the component: `Client: NoGapDef.defClient(function(Tools, Instance, Context) { ... })`
- * Add `Host.Public`
- * Add `Client.initClient`
- * Add `Client.Public`
+### New Concepts
+ * We need to perform an asynchronous request whose result is to be sent to the other side:
+   * In that case, first call `this.Tools.keepOpen()`, so the client connection will not be closed automatically
+   * Once you sent everything to the client, call `this.Tools.flush()`
 
-How does it work?
- * When we open the browser, we see a button
- * When we click the button, we call `this.host.tellClientSomething`
-    * `this.host` gives us an object on which we can call `Public` methods on the host
-    * For example, we can call `tellClientSomething` which is a method that was defined in `Host.Public`
- * Once the host receives our request, it sends something back
- 	* `this.client.showHostMessage` is called to send something back
- 	* Similarly to `this.host` on the client side, `this.client` gives access to the client's `Public` methods
- * Finally, the `showHostMessage` is called on the client side and shows us the message sent by the host
+
+## [CodeSharingValidation](samples/CodeSharingValidation)
+
+
+```js
+	Base: NoGapDef.defBase(function(SharedTools, Shared, SharedContext) { return {
+	    validateText: function(text) {
+	        if (text.indexOf('a') >= 0 || text.indexOf('A') >= 0) {
+	            return null;
+	        }
+	        return text.trim();
+	    }
+	};}),
+
+    Host: NoGapDef.defHost(function(SharedTools, Shared, SharedContext) { return {
+        Public: {
+            setValue: function(value) {
+                this.value = this.Shared.validateText(value);
+                // ...
+            }
+        }
+    };}),
+
+    Client: NoGapDef.defClient(function(Tools, Instance, Context) { return {
+        	// ...
+                    value = this.validateText(value);
+            // ...
+    };})
+```
+
+### New Concepts
+ * The `Base` definition is merged into both `Client` and `Host`
+ * You can use it to easily share code between them
+
+
+
+## [Assets](samples/Assets)
+
+```js
+NoGapDef.component({
+    Host: NoGapDef.defHost(function(SharedTools, Shared, SharedContext) { return {
+        Assets: {
+            AutoIncludes: {
+                js: [
+                    // jquery
+                    '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+                ],
+
+                css: [
+                    // bootstrap
+                    '//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'
+                ]
+            },
+
+            Files: {
+                string: {
+                    view: 'template.html'
+                }
+            }
+        }
+    };}),
+
+    Client: NoGapDef.defClient(function(Tools, Instance, Context) { return {
+        initClient: function() {
+            document.body.innerHTML += this.assets.view;
+        }
+    };})
+});
+```
+
+### New Concepts
+  * So far, you can define two types of file-based assets:
+    * `AutoIncludes` defines lists of `js` and `css` files that will be automatically included in the client header
+    * `Files` will be read and it's contents will be available through the clients `assets` variable.
+      * Currently they can only be interpreted as string. Future plans: `code`, `image` and more more more...
+
+
+## [Dynamic Loading of Components](samples/DynamicallyLoadedComponents)
+
+ TODO: Not done yet...
 
 
 
@@ -156,9 +219,9 @@ How does it work?
 =============
 
 This tutorial is aimed at those who are new to `NoGap`, and new to `Node` in general.
-It should help you bridge the gap from the [Code Snippets](#code_snippets) to a real-world application.
+It should help you bridge the gap from the [Code Snippets](#samples) to a real-world application.
 
-# Recommended File Structure
+## Recommended File Structure
     .
     +-- components/
     +-- lib/
@@ -169,7 +232,7 @@ It should help you bridge the gap from the [Code Snippets](#code_snippets) to a 
 
 Let's have a look at the different files and folders:
 
-## package.json
+### package.json
 
 This is the standard `Node` configuration file. Here you can declare your app's basic metadata and, most importantly, your dependencies.
 If you need one of the thousands over thousands of publicly available `Node` modules, two steps are required:
@@ -183,17 +246,18 @@ Done. Now the new module is available in your code via:
 
 where `some-module` is the name you gave it in the package.json file.
 
-Check out <a href="https://www.npmjs.org/">https://www.npmjs.org/</a> to see all available modules.
+Check out [NPM JS]("https://www.npmjs.org/") to see all available modules.
 
 
-## `components/`
+### `components/`
 
 This folder contains your `NoGap` components, and possibly (some of) their assets. You can name it anything you want.
+
 NOTE: Placing assets (such as *.html templates, stylesheets, images etc.) next to code is actually good style, if it supports modularization.
-If your components are mostly self-contained, you can easily move their whole folder, including their assets, to deploy them in other places.
+If your components have a sufficiently modular design, you can simply copy their folder, to deploy them and their assets in other places.
 
 
-## `appConfig.js`
+### `appConfig.js`
 
 This is your custom configuration file. You can name it anything you want.
 It contains some basic constant data that your application needs, such as database login and other setup information.
@@ -231,18 +295,18 @@ The following is an example of a `NoGap` configuration. It requires at least thr
 There are more, optional parameters. Documentation will come soon.
 
 
-## `app.js`
+### `app.js`
 
 This defines your actual application. You can name it anything you want. Usually this file only does two things:
 
  1. Setup your app
- 2. Start your <a href="http://expressjs.com/4x/api.html">`express` server</a>
+ 2. Start `NoGap`
+ 3. Start your [`express` server](http://expressjs.com/4x/api.html)
 
-Express is the standard Node way of starting a web server and let clients connect.
+Express is the standard Node way of starting a HTTP server and let clients connect.
 Once it is running you can connect to it with your browser on the specified port.
+NOTE: When using `NoGap` you will not need to work with express anymore. You can, but you are recommended to use components instead.
 
-With `NoGap`, we add one more job to it:
+With that in mind, you are recommended to take a look at the [`NoGap Sample App`](samples/sample_app) to look at a slightly more complete example of using `NoGap`.
 
- 1. Setup your app
- 2. Initialize `NoGap`
- 3. Start your <a href="http://expressjs.com/4x/api.html">`express` server</a>
+In case of questions, feel free to contact me.
