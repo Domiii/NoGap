@@ -224,30 +224,15 @@ It should help you bridge the gap from the [Code Snippets](#samples) to a real-w
 ## Recommended File Structure
     .
     +-- components/
+    |	+-- models/
+    |	+-- ui/
     +-- lib/
     +-- pub/
-    +-- package.json
-    +-- appConfig.js
     +-- app.js
+    +-- appConfig.js
+    +-- package.json
 
-Let's have a look at the different files and folders:
-
-### package.json
-
-This is the standard `Node` configuration file. Here you can declare your app's basic metadata and, most importantly, your dependencies.
-If you need one of the thousands over thousands of publicly available `Node` modules, two steps are required:
-
- 1. add their name and your preferred version to `dependencies`
- 2. Run `npm install`
-
-Done. Now the new module is available in your code via:
-
-`var someModule = require('some-module');`
-
-where `some-module` is the name you gave it in the package.json file.
-
-Check out [NPM JS]("https://www.npmjs.org/") to see all available modules.
-
+This is the recommended file structure for the average web application. As always, the structure might look vastly different for special purpose applications.
 
 ### `components/`
 
@@ -255,6 +240,31 @@ This folder contains your `NoGap` components, and possibly (some of) their asset
 
 NOTE: Placing assets (such as *.html templates, stylesheets, images etc.) next to code is actually good style, if it supports modularization.
 If your components have a sufficiently modular design, you can simply copy their folder, to deploy them and their assets in other places.
+
+
+### `components/models/`
+
+This folder contains the interface with your DB and possibly other storage systems. They provide [CRUD](http://en.wikipedia.org/wiki/Create,_read,_update_and_delete) functionality to the rest of the application.
+
+
+### `components/ui/`
+
+This folder contains UI-related components. That is UI controller and view code. Views are in separate files from the code, but they can be in the same folder to support modularity.
+
+
+
+### `app.js`
+
+This defines your actual application. You can name it anything you want. Usually this file only does two things:
+
+ 1. Setup your app
+ 2. Start `NoGap`
+ 3. Start your [`express` server](http://expressjs.com/4x/api.html)
+
+Express is the standard Node way of starting a HTTP server and let clients connect.
+Once it is running you can connect to it with your browser on the specified port.
+NOTE: When using `NoGap` you will not need to work with express anymore. You can, but you are recommended to use components instead.
+
 
 
 ### `appConfig.js`
@@ -295,18 +305,27 @@ The following is an example of a `NoGap` configuration. It requires at least thr
 There are more, optional parameters. Documentation will come soon.
 
 
-### `app.js`
+### package.json
 
-This defines your actual application. You can name it anything you want. Usually this file only does two things:
+This is the standard `Node` configuration file. Here you can declare your app's basic metadata and, most importantly, your dependencies.
+If you need one of the thousands over thousands of publicly available `Node` modules, two steps are required:
 
- 1. Setup your app
- 2. Start `NoGap`
- 3. Start your [`express` server](http://expressjs.com/4x/api.html)
+ 1. add their name and your preferred version to `dependencies`
+ 2. Run `npm install`
 
-Express is the standard Node way of starting a HTTP server and let clients connect.
-Once it is running you can connect to it with your browser on the specified port.
-NOTE: When using `NoGap` you will not need to work with express anymore. You can, but you are recommended to use components instead.
+Done. Now the new module is available in your code via:
 
-With that in mind, you are recommended to take a look at the [`NoGap Sample App`](samples/sample_app) to look at a slightly more complete example of using `NoGap`.
+`var someModule = require('some-module');`
+
+where `some-module` is the name you gave it in the package.json file.
+
+Check out [NPM JS]("https://www.npmjs.org/") to see all available modules.
+
+
+
+Final Words
+=============
+
+Good luck! You are recommended to take a look at the [`NoGap Sample App`](samples/sample_app) for a slightly more complete example of using `NoGap`.
 
 In case of questions, feel free to contact me.
