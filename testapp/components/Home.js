@@ -14,6 +14,10 @@ var ComponentDef = Components.Def;
 module.exports = ComponentDef.component({
     Namespace: 'bjt',
     
+    /**
+     * The `Host` endpoint of a component lives in the host context and is also returned by `ComponentDef.component`.
+     * Methods inside the `Public` instance prototype can be called by the client.
+     */
     Host: ComponentDef.defHost(function(SharedTools, Shared, SharedContext) {
         return {
             Assets: {

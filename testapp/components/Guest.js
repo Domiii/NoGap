@@ -12,8 +12,8 @@ module.exports = ComponentDef.component({
     Namespace: 'bjt',
 
     /**
-     * The HostComponent instance will live in the host context (here).
-     * Functions inside HostComponent.command can be called by the client.
+     * The `Host` endpoint of a component lives in the host context and is also returned by `ComponentDef.component`.
+     * Methods inside the `Public` instance prototype can be called by the client.
      */
     Host: ComponentDef.defHost(function(SharedTools, Shared, SharedContext) { return {
         Assets: {

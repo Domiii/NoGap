@@ -354,3 +354,69 @@
 [2014-05-31 02:55:01.680] [INFO] default - Test app is now up and running at port 8080 [90m(d:/code/mine/js/NoGap/testapp/app.js:96)[39m
 [2014-05-31 03:08:14.471] [INFO] default - Shutting down... [90m(d:/code/mine/js/NoGap/testapp/lib/maintenance.js:40)[39m
 [2014-05-31 03:08:14.474] [INFO] default - Shutdown complete. Bye bye! [90m(d:/code/mine/js/NoGap/testapp/lib/maintenance.js:53)[39m
+[2014-06-03 08:15:14.580] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/NoGap/testapp/app.js:25)[39m
+[2014-06-03 08:15:14.647] [INFO] default - Test app is now up and running at port 12345 [90m(d:/code/mine/js/NoGap/testapp/app.js:96)[39m
+[2014-06-03 08:16:18.049] [INFO] default - Shutting down... [90m(d:/code/mine/js/NoGap/testapp/lib/maintenance.js:40)[39m
+[2014-06-03 08:16:18.051] [INFO] default - Shutdown complete. Bye bye! [90m(d:/code/mine/js/NoGap/testapp/lib/maintenance.js:53)[39m
+[2014-06-03 08:16:19.199] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/NoGap/testapp/app.js:25)[39m
+[2014-06-03 08:16:19.265] [INFO] default - Test app is now up and running at port 12345 [90m(d:/code/mine/js/NoGap/testapp/app.js:96)[39m
+[2014-06-03 08:16:23.973] [INFO] default - asd [90m(d:/code/mine/js/NoGap/testapp/components/Guest.js:55)[39m
+[2014-06-03 08:16:29.247] [INFO] default - asd [90m(d:/code/mine/js/NoGap/testapp/components/Guest.js:55)[39m
+[2014-06-03 08:17:37.426] [INFO] default - Shutting down... [90m(d:/code/mine/js/NoGap/testapp/lib/maintenance.js:40)[39m
+[2014-06-03 08:17:37.428] [INFO] default - Shutdown complete. Bye bye! [90m(d:/code/mine/js/NoGap/testapp/lib/maintenance.js:53)[39m
+[2014-06-03 08:17:38.708] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/NoGap/testapp/app.js:25)[39m
+[2014-06-03 08:17:38.775] [INFO] default - Test app is now up and running at port 12345 [90m(d:/code/mine/js/NoGap/testapp/app.js:96)[39m
+[2014-06-03 08:17:42.102] [INFO] default - asd [90m(d:/code/mine/js/NoGap/testapp/components/Guest.js:37)[39m
+[2014-06-03 08:17:52.088] [INFO] default - asd [90m(d:/code/mine/js/NoGap/testapp/components/Guest.js:37)[39m
+[2014-06-03 08:17:57.637] [INFO] default - asd [90m(d:/code/mine/js/NoGap/testapp/components/Guest.js:37)[39m
+[2014-06-03 08:19:51.101] [INFO] default - Shutting down... [90m(d:/code/mine/js/NoGap/testapp/lib/maintenance.js:40)[39m
+[2014-06-03 08:19:51.103] [INFO] default - Shutdown complete. Bye bye! [90m(d:/code/mine/js/NoGap/testapp/lib/maintenance.js:53)[39m
+[2014-06-03 08:19:52.410] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/NoGap/testapp/app.js:25)[39m
+[2014-06-03 08:19:52.477] [INFO] default - Test app is now up and running at port 12345 [90m(d:/code/mine/js/NoGap/testapp/app.js:96)[39m
+[2014-06-03 08:20:59.934] [INFO] default - Shutting down... [90m(d:/code/mine/js/NoGap/testapp/lib/maintenance.js:40)[39m
+[2014-06-03 08:20:59.936] [INFO] default - Shutdown complete. Bye bye! [90m(d:/code/mine/js/NoGap/testapp/lib/maintenance.js:53)[39m
+[2014-06-03 08:21:01.207] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/NoGap/testapp/app.js:25)[39m
+[2014-06-03 08:21:01.273] [INFO] default - Test app is now up and running at port 12345 [90m(d:/code/mine/js/NoGap/testapp/app.js:96)[39m
+[2014-06-03 08:21:20.455] [INFO] default - asd [90m(d:/code/mine/js/NoGap/testapp/components/Guest.js:37)[39m
+[2014-06-03 08:21:23.630] [INFO] default - asd [90m(d:/code/mine/js/NoGap/testapp/components/Guest.js:37)[39m
+[2014-06-03 08:21:29.247] [INFO] default - asd [90m(d:/code/mine/js/NoGap/testapp/components/Guest.js:37)[39m
+[2014-06-03 08:23:16.589] [INFO] default - asd [90m(d:/code/mine/js/NoGap/testapp/components/Guest.js:37)[39m
+[2014-06-03 08:23:20.685] [INFO] default - asd [90m(d:/code/mine/js/NoGap/testapp/components/Guest.js:37)[39m
+[2014-06-03 08:23:23.870] [INFO] default -  [90m(d:/code/mine/js/NoGap/testapp/components/Guest.js:37)[39m
+[2014-06-03 08:23:24.650] [INFO] default -  [90m(d:/code/mine/js/NoGap/testapp/components/Guest.js:37)[39m
+[2014-06-03 08:23:24.706] [INFO] default -  [90m(d:/code/mine/js/NoGap/testapp/components/Guest.js:37)[39m
+[2014-06-03 08:23:25.041] [INFO] default -  [90m(d:/code/mine/js/NoGap/testapp/components/Guest.js:37)[39m
+[2014-06-03 08:23:26.746] [INFO] default - asd [90m(d:/code/mine/js/NoGap/testapp/components/Guest.js:37)[39m
+[2014-06-03 08:24:11.849] [INFO] default - asd [90m(d:/code/mine/js/NoGap/testapp/components/Guest.js:37)[39m
+[2014-06-03 08:24:18.321] [INFO] default - asd [90m(d:/code/mine/js/NoGap/testapp/components/Guest.js:37)[39m
+[2014-06-03 08:25:11.678] [INFO] default - asd [90m(d:/code/mine/js/NoGap/testapp/components/Guest.js:37)[39m
+[2014-06-03 08:25:57.458] [INFO] default - Shutting down... [90m(d:/code/mine/js/NoGap/testapp/lib/maintenance.js:40)[39m
+[2014-06-03 08:25:57.461] [INFO] default - Shutdown complete. Bye bye! [90m(d:/code/mine/js/NoGap/testapp/lib/maintenance.js:53)[39m
+[2014-06-03 08:25:58.998] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/NoGap/testapp/app.js:25)[39m
+[2014-06-03 08:25:59.071] [INFO] default - Test app is now up and running at port 12345 [90m(d:/code/mine/js/NoGap/testapp/app.js:96)[39m
+[2014-06-03 08:26:01.509] [INFO] default - asd [90m(d:/code/mine/js/NoGap/testapp/components/Guest.js:37)[39m
+[2014-06-03 08:26:06.555] [INFO] default -  [90m(d:/code/mine/js/NoGap/testapp/components/Guest.js:37)[39m
+[2014-06-03 08:26:07.237] [INFO] default -  [90m(d:/code/mine/js/NoGap/testapp/components/Guest.js:37)[39m
+[2014-06-03 08:26:08.707] [INFO] default - asd [90m(d:/code/mine/js/NoGap/testapp/components/Guest.js:37)[39m
+[2014-06-03 08:26:13.122] [INFO] default - ads [90m(d:/code/mine/js/NoGap/testapp/components/Guest.js:37)[39m
+[2014-06-03 08:26:14.875] [INFO] default -  [90m(d:/code/mine/js/NoGap/testapp/components/Guest.js:37)[39m
+[2014-06-03 08:26:16.869] [INFO] default - asddzzz [90m(d:/code/mine/js/NoGap/testapp/components/Guest.js:37)[39m
+[2014-06-03 08:26:21.370] [INFO] default - zzz [90m(d:/code/mine/js/NoGap/testapp/components/Guest.js:37)[39m
+[2014-06-03 08:26:24.954] [INFO] default - zzz [90m(d:/code/mine/js/NoGap/testapp/components/Guest.js:37)[39m
+[2014-06-03 08:26:27.869] [INFO] default -  [90m(d:/code/mine/js/NoGap/testapp/components/Guest.js:37)[39m
+[2014-06-03 08:26:28.733] [INFO] default -  [90m(d:/code/mine/js/NoGap/testapp/components/Guest.js:37)[39m
+[2014-06-03 08:26:30.136] [INFO] default - zzzz [90m(d:/code/mine/js/NoGap/testapp/components/Guest.js:37)[39m
+[2014-06-03 08:26:50.918] [INFO] default - Shutting down... [90m(d:/code/mine/js/NoGap/testapp/lib/maintenance.js:40)[39m
+[2014-06-03 08:26:50.919] [INFO] default - Shutdown complete. Bye bye! [90m(d:/code/mine/js/NoGap/testapp/lib/maintenance.js:53)[39m
+[2014-06-03 08:26:52.239] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/NoGap/testapp/app.js:25)[39m
+[2014-06-03 08:26:52.305] [INFO] default - Test app is now up and running at port 12345 [90m(d:/code/mine/js/NoGap/testapp/app.js:96)[39m
+[2014-06-03 08:26:57.532] [INFO] default - asd [90m(d:/code/mine/js/NoGap/testapp/components/Guest.js:37)[39m
+[2014-06-03 08:27:00.652] [INFO] default -  [90m(d:/code/mine/js/NoGap/testapp/components/Guest.js:37)[39m
+[2014-06-03 08:27:02.423] [INFO] default - asd [90m(d:/code/mine/js/NoGap/testapp/components/Guest.js:37)[39m
+[2014-06-03 08:27:12.040] [INFO] default - asd [90m(d:/code/mine/js/NoGap/testapp/components/Guest.js:37)[39m
+[2014-06-03 08:27:49.454] [INFO] default - Shutting down... [90m(d:/code/mine/js/NoGap/testapp/lib/maintenance.js:40)[39m
+[2014-06-03 08:27:49.455] [INFO] default - Shutdown complete. Bye bye! [90m(d:/code/mine/js/NoGap/testapp/lib/maintenance.js:53)[39m
+[2014-06-03 08:27:52.419] [INFO] default - Starting server. Please wait... [90m(d:/code/mine/js/NoGap/testapp/app.js:25)[39m
+[2014-06-03 08:27:52.486] [INFO] default - Test app is now up and running at port 12345 [90m(d:/code/mine/js/NoGap/testapp/app.js:96)[39m
+[2014-06-03 08:29:26.869] [INFO] default - Shutting down... [90m(d:/code/mine/js/NoGap/testapp/lib/maintenance.js:40)[39m
+[2014-06-03 08:29:26.871] [INFO] default - Shutdown complete. Bye bye! [90m(d:/code/mine/js/NoGap/testapp/lib/maintenance.js:53)[39m

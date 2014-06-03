@@ -5,7 +5,7 @@
         <div for="username" ng-style="{visibility: !!errorMessage && 'visible' || 'hidden'}" class="form-element alert alert-danger">
           {{errorMessage}}
         </div>
-        <a ng-disabled="busy" tabindex="101" class="form-element form-control btn btn-lg btn-primary btn-block" ng-click="clickLogin()">
+        <a ng-disabled="busy" tabindex="101" class="form-element form-control btn btn-lg btn-primary btn-block" ng-click="clickLogin();">
             <span>Login</span> <span ng-style="{visibility: busy && 'visible' || 'hidden'}"><i class="fa fa-cog fa-spin"></i></span>
         </a>
     </div>

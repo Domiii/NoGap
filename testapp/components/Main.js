@@ -14,6 +14,10 @@ var ComponentDef = Components.Def;
 module.exports = ComponentDef.component({
     Namespace: 'bjt',
     
+    /**
+     * The `Host` endpoint of a component lives in the host context and is also returned by `ComponentDef.component`.
+     * Methods inside the `Public` instance prototype can be called by the client.
+     */
     Host: ComponentDef.defHost(function(SharedTools, Shared, SharedContext) {
         return {
             Assets: {
@@ -21,7 +25,6 @@ module.exports = ComponentDef.component({
                     js: [
                         // Angular JS
                         '//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js',
-                        '//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-route.js',
                         
                         // bootstrap's logic (requires jquery)
                         '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js',

@@ -2,7 +2,7 @@ module.exports = {
     "dev": "1",
 
     "httpd": {
-        "port"     : "8080",
+        "port"     : "12345",
         "wikiUrl"  : "http://localhost:80/wiki"
     },
 
