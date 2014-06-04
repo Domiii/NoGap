@@ -5,7 +5,7 @@
 
 
 // ##########################################################################
-// Define TwoWayStreetAsync component
+// Define TwoWayStreetAsync  component
 
 var NoGapDef = require('nogap').Def;
 
@@ -20,8 +20,6 @@ NoGapDef.component({
 
             Public: {
                 tellClientSomething: function() {
-                    this.Tools.keepOpen();
-
                     // wait 500 milliseconds before replying
                     setTimeout(function() {
                         this.client.showHostMessage('We have exchanged ' + ++iAttempt + ' messages.');
