@@ -1,6 +1,6 @@
 {
   "name": "nogap",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "author": {
     "name": "Dominik Seifert",
     "email": "contactdomisemail@gmail.com",
@@ -15,10 +15,8 @@
     "squishy": "*",
     "mime": "*"
   },
-  "devDependencies": {
-  },
-  "scripts": {
-  },
+  "devDependencies": {},
+  "scripts": {},
   "engines": {
     "node": ">= 0.8.0"
   },
