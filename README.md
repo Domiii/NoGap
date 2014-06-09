@@ -30,8 +30,10 @@ The Samples highlight some (soon, all!) features of the NoGap framework and how 
 
  1. Create a new folder (e.g. NoGapTest)
  2. Follow installation instructions given above
- 3. `cd samples/HelloWorld` (or any other sample)
- 3. `npm install`
+    * You now have a `node_modules/nogap` subfolder.
+    * You can now work through the samples below and try it out in real-time
+ 4. `node_modules/nogap/samples/HelloWorld` (or any other sample)
+ 3. `npm install` (will automatically download and install the sample's dependencies)
  4. `npm start` (this will run the app defined in the sample's `package.json`)
  5. Open your browser and go to `localhost:1234` (or whatever port you are using)
  6. Start playing!
