@@ -8,7 +8,11 @@ host and client and that makes a client<->server architecture so cumbersome to d
 
 NoGap's primary use case is to develop rich client-side applications while alleviating the typical hassles of doing so.
 
-Have a look at the [Samples](samples) for reference.
+Have a look at the [Samples](#samples) for reference.
+
+If you want to get serious, take a look at the [Getting Started](#getting_started) section to figure out how to build a complete Node-based web application with NoGap.
+
+Note that currently, the only dependency of NoGap is `Node` but even that is planned to be removed in the future.
 
 
 
@@ -226,6 +230,9 @@ NoGapDef.component({
 
  TODO: Not done yet...
 
+## [Simple Sample App](https://github.com/Domiii/NoGap/tree/master/samples/sample_app)
+
+This App shows how to start building a real application with NoGap. It uses `Angular`, `Boostrap` and `Font-Awesome` to do some real client-side rendering. Important to note: None of these are required. You can build your frontend and backend any way you want.
 
 
 <a name="getting_started"></a>Getting Started
@@ -233,6 +240,7 @@ NoGapDef.component({
 
 This tutorial is aimed at those who are new to `NoGap`, and new to `Node` in general.
 It should help you bridge the gap from the [Code Snippets](#samples) to a real-world application.
+Note that the [Simple Sample App](https://github.com/Domiii/NoGap/tree/master/samples/sample_app) is also following these guidelines.
 
 ## Recommended File Structure
     .
