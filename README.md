@@ -307,16 +307,28 @@ NOTE: When using `NoGap` you will not need to work with express anymore (other t
 
 This is your custom configuration file. You can name it anything you want.
 It contains some basic constant data that your application needs, such as database login and other setup information.
-The following is an example of a `NoGap` configuration. It requires at least three entries:
+The following is an example of a `NoGap` configuration. It requires at least two entries:
 
  * `baseFolder`
   	* This is the folder, relative to your application (e.g. `app.js`) where you defined all NoGap components.
- * `publicFolder`
- 	* The folder to find all client asset files that cannot be found relative to a component.
- 	* Usually this is used to store client-only and shared javascript libraries that do not have `NoGap` support.
  * `files`
  	* The actual component files (sans ".js"). Whenever you add a component, don't forget to list it here!
 
+
+#### Optional Configuration parameters
+
+ * `publicFolder` (Default = `pub/`)
+ 	* The folder to find all client asset files that cannot be found relative to a component.
+ 	* Usually this is used to store client-only and shared javascript libraries that do not have `NoGap` support (they are not defined as components).
+ * `endpointImplementation.name` (Default = `HttpPost`)
+ 	* Currently, only POST is available. Websockets will follow soon.
+ 	* You can also implement your own transport layer if you want, but you probably don't.
+ 	* If you are interested into the dirty details, have a look at [`HttpPostImpl` in `ComponentCommunications.js`](https://github.com/Domiii/NoGap/blob/master/lib/ComponentCommunications.js#L564)
+
+There are more, optional parameters. Documentation will come soon.
+
+
+#### Example Config
 
 ```js
 "nogap": {
@@ -337,8 +349,6 @@ The following is an example of a `NoGap` configuration. It requires at least thr
     ]
 }
 ```
-
-There are more, optional parameters. Documentation will come soon.
 
 
 ### package.json
