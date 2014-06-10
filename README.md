@@ -12,7 +12,7 @@ Have a look at the [Samples](#samples) for reference.
 
 If you want to get serious, take a look at the [Getting Started](#getting_started) section to figure out how to build a complete Node-based web application with NoGap.
 
-Note that currently, the only dependency of NoGap is `Node` but even that is planned to be removed in the future.
+Note that currently, the only dependency of NoGap is `Node` and some of its modules but even that is planned to be removed in the future.
 
 
 
