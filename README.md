@@ -226,9 +226,23 @@ NoGapDef.component({
       * Currently they can only be interpreted as string. Future plans: `code`, `image` and more more more...
 
 
+## Multiple Components
+
+This Sample is not done yet, but the [Simple Sample App](https://github.com/Domiii/NoGap/tree/master/samples/sample_app) already does this.
+ 
+### Random Examples
+  * `Shared.ComponentA.say('hello');`
+  * `this.Instance.ComponentB.client.somePublicMethod(some, data);`
+
+
+
 ## [Dynamic Loading of Components](samples/DynamicallyLoadedComponents)
 
- TODO: Not done yet...
+TODO: Sample not done yet...
+ 
+### New Concepts
+  * `this.Tools.requestClientComponents(names, callback);`
+
 
 ## [Simple Sample App](https://github.com/Domiii/NoGap/tree/master/samples/sample_app)
 
