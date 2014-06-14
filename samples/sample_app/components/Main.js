@@ -202,13 +202,11 @@ module.exports = NoGapDef.component({
              * `onNewComponent` is called on every newly loaded component.
              */
             onNewComponent: function(component) {
-                // we need to defer setup because Angular might not be ready yet
-                angular.element(document).ready(function() {
-                    // register page components
-                    if (component.setupView) {
-                        component.setupView(this, app);
-                    }
-                }.bind(this));
+                // register page components
+                console.log(component._def.FullName);
+                if (component.setupView) {
+                    component.setupView(this, app);
+                }
             },
 
             /**
@@ -217,6 +215,7 @@ module.exports = NoGapDef.component({
             gotoPage: function(componentName) {
                 // we can be sure, the component is available now, else the above function call would have generated an error
                 var component = Instance[componentName];
+                console.log(componentName);
 
                 // deactivate current page
                 if (activePage) {
@@ -268,10 +267,10 @@ module.exports = NoGapDef.component({
                     this.clientAddr = clientAddr;
 
                     // we need to defer setup because Angular might not be ready yet
-                    angular.element(document).ready(function() {
+                    setTimeout(function() {
                         // set current user and select page to view correspondingly
                         this.onUserChanged(userName);
-                    }.bind(this));
+                    }.bind(this), 1);
                 }
             }
         };
