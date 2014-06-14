@@ -8,7 +8,11 @@ host and client and that makes a client<->server architecture so cumbersome to d
 
 NoGap's primary use case is to develop rich client-side applications while alleviating the typical hassles of doing so.
 
-Have a look at the [Samples](samples) for reference.
+Have a look at the [Samples](#samples) for reference.
+
+If you want to get serious, take a look at the [Getting Started](#getting_started) section to figure out how to build a complete Node-based web application with NoGap.
+
+Note that currently, the only dependency of NoGap is `Node` and some of its modules but even that is planned to be removed in the future.
 
 
 
@@ -25,6 +29,19 @@ Installation
 
 [Samples](samples)<a name="samples"></a>
 =============
+
+The Samples highlight some (soon, all!) features of the NoGap framework and how they are used. To run the samples:
+
+ 1. Create a new folder (e.g. NoGapTest)
+ 2. Follow installation instructions given above
+    * You now have a `node_modules/nogap` subfolder.
+    * You can now work through the samples below and try it out in real-time
+ 4. `cd node_modules/nogap/samples/HelloWorld` (or any other sample)
+ 3. `npm install` (will automatically download and install the sample's dependencies)
+ 4. `npm start` (this will run the app defined in the sample's `package.json`)
+ 5. Open your browser and go to `localhost:1234` (or whatever port you are using)
+ 6. Start playing!
+
 
 ## [HelloWorld](samples/HelloWorld)
 
@@ -209,10 +226,27 @@ NoGapDef.component({
       * Currently they can only be interpreted as string. Future plans: `code`, `image` and more more more...
 
 
+## Multiple Components
+
+This Sample is not done yet, but the [Simple Sample App](https://github.com/Domiii/NoGap/tree/master/samples/sample_app) already does this.
+ 
+### Random Examples
+  * `Shared.ComponentA.say('hello');`
+  * `this.Instance.ComponentB.client.somePublicMethod(some, data);`
+
+
+
 ## [Dynamic Loading of Components](samples/DynamicallyLoadedComponents)
 
- TODO: Not done yet...
+TODO: Sample not done yet...
+ 
+### New Concepts
+  * `this.Tools.requestClientComponents(names, callback);`
 
+
+## [Simple Sample App](https://github.com/Domiii/NoGap/tree/master/samples/sample_app)
+
+This App shows how to start building a real application with NoGap. It uses `Angular`, `Boostrap` and `Font-Awesome` to do some real client-side rendering. Important to note: None of these are required. You can build your frontend and backend any way you want.
 
 
 <a name="getting_started"></a>Getting Started
@@ -220,6 +254,7 @@ NoGapDef.component({
 
 This tutorial is aimed at those who are new to `NoGap`, and new to `Node` in general.
 It should help you bridge the gap from the [Code Snippets](#samples) to a real-world application.
+Note that the [Simple Sample App](https://github.com/Domiii/NoGap/tree/master/samples/sample_app) is also following these guidelines.
 
 ## Recommended File Structure
     .
@@ -272,16 +307,28 @@ NOTE: When using `NoGap` you will not need to work with express anymore (other t
 
 This is your custom configuration file. You can name it anything you want.
 It contains some basic constant data that your application needs, such as database login and other setup information.
-The following is an example of a `NoGap` configuration. It requires at least three entries:
+The following is an example of a `NoGap` configuration. It requires at least two entries:
 
  * `baseFolder`
   	* This is the folder, relative to your application (e.g. `app.js`) where you defined all NoGap components.
- * `publicFolder`
- 	* The folder to find all client asset files that cannot be found relative to a component.
- 	* Usually this is used to store client-only and shared javascript libraries that do not have `NoGap` support.
  * `files`
  	* The actual component files (sans ".js"). Whenever you add a component, don't forget to list it here!
 
+
+#### Optional Configuration parameters
+
+ * `publicFolder` (Default = `pub/`)
+ 	* The folder to find all client asset files that cannot be found relative to a component.
+ 	* Usually this is used to store client-only and shared javascript libraries that do not have `NoGap` support (they are not defined as components).
+ * `endpointImplementation.name` (Default = `HttpPost`)
+ 	* Currently, only POST is available. Websockets will follow soon.
+ 	* You can also implement your own transport layer if you want, but you probably don't.
+ 	* If you are interested into the dirty details, have a look at [`HttpPostImpl` in `ComponentCommunications.js`](https://github.com/Domiii/NoGap/blob/master/lib/ComponentCommunications.js#L564)
+
+There are more, optional parameters. Documentation will come soon.
+
+
+#### Example Config
 
 ```js
 "nogap": {
@@ -302,8 +349,6 @@ The following is an example of a `NoGap` configuration. It requires at least thr
     ]
 }
 ```
-
-There are more, optional parameters. Documentation will come soon.
 
 
 ### package.json
