@@ -248,6 +248,112 @@ TODO: Sample not done yet...
 
 This App shows how to start building a real application with NoGap. It uses `Angular`, `Boostrap` and `Font-Awesome` to do some real client-side rendering. Important to note: None of these are required. You can build your frontend and backend any way you want.
 
+<a name="component_skeleton"></a>Component Skeleton
+=============
+
+ * In addition to structure, a component can have a lot of `optional methods` that will be called during important events.
+ * This skeleton summarizes (most of) those methods.
+
+
+```js
+/**
+ * A complete Component skeleton
+ */
+"use strict";
+
+var NoGapDef = require('nogap').Def;
+
+module.exports = NoGapDef.component({
+    /**
+     * If no name is given, NoGap will use the filename as name.
+     * If you define more than one unnamed component per file, you will see an error.
+     */
+    Name = undefined,
+
+    /**
+     * The `Base` definition is merged into both, `Host` and `Client`
+     */
+    Base: NoGapDef.defBase(function(SharedTools, Shared, SharedContext) {
+        return {
+            /**
+             * Called right before `__ctor` of `Host` and `Client`
+             */
+            __ctor: function() {
+            },
+
+            /**
+             * Called right before `initHost` and `initClient`.
+             */
+            initBase: function() {
+            },
+
+            /**
+             * Private instance members.
+             */
+            Private: {
+            },
+
+            /**
+             * Public instance methods that can be called by the other side.
+             */
+            Public: {
+            }
+        };
+    }),
+
+    Host: NoGapDef.defHost(function(SharedTools, Shared, SharedContext) {
+        return {
+            __ctor: function () {
+            },
+
+            initHost: function() {
+            },
+
+            /**
+             * Private instance members.
+             */
+            Private: {
+                __ctor: function () {
+                },
+
+                /**
+                 * Called when a client connected.
+                 */
+                onNewClient: function() {
+                },
+
+                /**
+                 * Called after `onNewClient`, once this component is bootstrapped on the client side.
+                 * Since components can be deployed dynamically, this might happen much later, or never.
+                 */
+                onClientBootstrap: function() {
+                }
+            },
+
+            /**
+             * Public instance methods that can be called by the other side.
+             */
+            Public: {
+            },
+        };
+    }),
+
+    Client: NoGapDef.defClient(function(Tools, Instance, Context) {
+        return {
+            __ctor: function () {
+            },
+
+            initClient: function() {
+
+            },
+
+            Public: {
+            }
+        };
+    })
+});
+```
+
 
 <a name="getting_started"></a>Getting Started
 =============
