@@ -270,7 +270,7 @@ module.exports = NoGapDef.component({
      * If no name is given, NoGap will use the filename as name.
      * If you define more than one unnamed component per file, you will see an error.
      */
-    Name = undefined,
+    Name: undefined,
 
     /**
      * The `Base` definition is merged into both, `Host` and `Client`
