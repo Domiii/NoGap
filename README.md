@@ -10,6 +10,8 @@ NoGap's primary use case is to develop rich client-side applications while allev
 
 Have a look at the [Samples](#samples) for reference.
 
+This readme also outlines the typical [skeleton](#component-skeleton) of a NoGap component.
+
 If you want to get serious, take a look at the [Getting Started](#getting_started) section to figure out how to build a complete Node-based web application with NoGap.
 
 Note that currently, the only dependency of NoGap is `Node` and some of its modules but even that is planned to be removed in the future.
@@ -276,7 +278,8 @@ module.exports = NoGapDef.component({
     Base: NoGapDef.defBase(function(SharedTools, Shared, SharedContext) {
         return {
             /**
-             * Called right before `__ctor` of `Host` and `Client`
+             * Called right before `__ctor` of `Host` and `Client`.
+             * Will be removed once called.
              */
             __ctor: function() {
             },
@@ -303,9 +306,17 @@ module.exports = NoGapDef.component({
 
     Host: NoGapDef.defHost(function(SharedTools, Shared, SharedContext) {
         return {
+            /**
+             * The ctor is called only once, during NoGap initialization,
+             * when the shared component part is created.
+             * Will be removed once called.
+             */
             __ctor: function () {
             },
-
+		
+	    /**
+	     * Is called once on each component after all components have been created.
+	     */
             initHost: function() {
             },
 
@@ -313,6 +324,11 @@ module.exports = NoGapDef.component({
              * Private instance members.
              */
             Private: {
+	        /**
+		 * Is called only once per session and application start, 
+		 * when the instance for the given session has been created.
+		 * Will be removed once called.
+		 */
                 __ctor: function () {
                 },
 
@@ -331,7 +347,7 @@ module.exports = NoGapDef.component({
             },
 
             /**
-             * Public instance methods that can be called by the other side.
+             * Public instance methods that can be called by the client.
              */
             Public: {
             },
@@ -340,13 +356,32 @@ module.exports = NoGapDef.component({
 
     Client: NoGapDef.defClient(function(Tools, Instance, Context) {
         return {
+      	    /**
+      	     * Called once after creation of the client-side instance.
+      	     * Will be removed once called.
+      	     */
             __ctor: function () {
             },
 
+      	    /**
+      	     * Called once after all currently deployed client-side 
+      	     * components have been created.
+      	     * Will be removed once called.
+      	     */
             initClient: function() {
 
             },
+            
+            /**
+             * This is optional and will be merged into the Client instance,
+             * residing along-side the members defined above.
+             */
+            Private: {
+            },
 
+            /**
+             * Public instance methods that can be called by the host.
+             */
             Public: {
             }
         };
