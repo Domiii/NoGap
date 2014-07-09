@@ -325,10 +325,10 @@ module.exports = NoGapDef.component({
              */
             Private: {
 	        /**
-		 * Is called only once per session and application start, 
-		 * when the instance for the given session has been created.
-		 * Will be removed once called.
-		 */
+	         * Is called only once per session and application start, 
+	         * when the instance for the given session has been created.
+	         * Will be removed once called.
+	         */
                 __ctor: function () {
                 },
 
