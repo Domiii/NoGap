@@ -314,9 +314,9 @@ module.exports = NoGapDef.component({
             __ctor: function () {
             },
 		
-	    /**
-	     * Is called once on each component after all components have been created.
-	     */
+	     /**
+	      * Is called once on each component after all components have been created.
+	      */
             initHost: function() {
             },
 
@@ -324,11 +324,11 @@ module.exports = NoGapDef.component({
              * Private instance members.
              */
             Private: {
-	        /**
-	         * Is called only once per session and application start, 
-	         * when the instance for the given session has been created.
-	         * Will be removed once called.
-	         */
+                /**
+                 * Is called only once per session and application start, 
+                 * when the instance for the given session has been created.
+                 * Will be removed once called.
+                 */
                 __ctor: function () {
                 },
 
