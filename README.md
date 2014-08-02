@@ -1,12 +1,12 @@
 NoGap
 =============
 
-The NoGap framework delivers RPC + asset management + some other good stuff for enjoyable Host &lt;-> Client architecture development.
+The NoGap framework delivers Simple code sharing + RPC + asset management + some other good stuff for enjoyable Host &lt;-> Client architecture development.
+
+NoGap's primary use case is development of rich single-page, client-side applications while alleviating the typical hassles of doing so.
 
 This module is called `No` `Gap` because it removes the typical gap that exists between
-host and client and that makes a client<->server architecture so cumbersome to develop.
-
-NoGap's primary use case is to develop rich client-side applications while alleviating the typical hassles of doing so.
+host and client and that makes a Client <-> Server architecture so cumbersome to develop.
 
 Have a look at the [Samples](#samples) for reference.
 
@@ -230,11 +230,11 @@ NoGapDef.component({
 
 ## Multiple Components
 
-This Sample is not done yet, but the [Simple Sample App](https://github.com/Domiii/NoGap/tree/master/samples/sample_app) already does this.
+The [Simple Sample App](https://github.com/Domiii/NoGap/tree/master/samples/sample_app/components) already does this.
  
-### Random Examples
-  * `Shared.ComponentA.say('hello');`
-  * `this.Instance.ComponentB.client.somePublicMethod(some, data);`
+### Examples of multi-component code:
+  * Call `say` on `ComponentA`: `Shared.ComponentA.say('hello');`
+  * Call `somePublicMethod` on the client of a `ComponentB` instance: `this.Instance.ComponentB.client.somePublicMethod(some, data);`
 
 
 
@@ -243,16 +243,34 @@ This Sample is not done yet, but the [Simple Sample App](https://github.com/Domi
 TODO: Sample not done yet...
  
 ### New Concepts
-  * `this.Tools.requestClientComponents(names, callback);`
+  * First, set `lazyLoad` to `1` in the config
+  * Then, call `this.Tools.requestClientComponents(names, callback);` to lazily load components from `Host` or from `Client`
 
 
 ## [Simple Sample App](https://github.com/Domiii/NoGap/tree/master/samples/sample_app)
 
-This App shows how to start building a real application with NoGap. It uses `Angular`, `Boostrap` and `Font-Awesome` to do some real client-side rendering. Important to note: None of these are required. You can build your frontend and backend any way you want.
+This App shows how to start building a real application with NoGap. It uses `Angular`, `Boostrap` and `Font-Awesome` to do some real client-side rendering. IMPORTANT: None of these libraries are required. You can build your frontend and backend any way you want.
 
-<a name="component_skeleton"></a>Component Skeleton
+<a name="component_skeleton"></a>Component Structure
 =============
 
+NOTE: The following is a rough explanation of many of NoGap's features. You are recommended to compare the explanation to their actual implementation in the [Simple Sample App](https://github.com/Domiii/NoGap/tree/master/samples/sample_app) to better understand them.
+
+# `Host`
+Every component has two endpoint definitions, called `Host` and `Client`. A `Host` can have multiple `Client`s, but each `Client` can only have one `Host` (as of now), making `Host` slightly more complex than `Client`. `Host` has two places for code, data and other definitions, which we call `Shared`. The "shared object" of a component exists only once. It is what is returned if you `require` the component file, and you can access it through the `Shared` set which is the second argument of every `Host`'s component definition.
+
+Every client that connects to the server, gets its own set of instances of every active component. On the `Host` side, these are defined as the merged result of all members of `Private` and `Public` which we call instance members. These instance members are accessible through `this.Instance`. There are several different ways of accessing client instances, e.g. by declaring `onNewClient` or `onClientBootstrap` members inside `Private`.
+
+# `Client`
+The set of all `Client` endpoint definition is automatically sent to the client and installed, as soon a client connects. If you want to load components dynamically (or lazily), during certain events, you need to set the `lazyLoad` config parameter to `true` or `1`. On the client side, `this.Shared` and `this.Instance` refer to the same object, and `Private` and `Public` are both merged into the `Client` definition itself.
+
+# `Base`
+Everything from the `Base` definition is merged into both, `Host` and `Client`. Since `Host` and `Client` operate slightly different, certain naming decisions had to be made seemingly in favor of one over the other. E.g. the `Shared` concept does not exist on client side (because a `Client` only contains a single instance of all components), so there, it simply is the same as `Instance`.
+
+Inside `Base` members, you can call `this.someMethod` if `someMethod` is not declared in `Base`, but is also declared in `Host` as well as `Client`, thereby supporting polymorphism: You can easily have shared code call endpoint-specific code and vice versa.
+
+
+# Component Skeleton
  * In addition to structure, a component can have a lot of `optional methods` that will be called during important events.
  * This skeleton summarizes (most of) those methods.
 
@@ -304,6 +322,9 @@ module.exports = NoGapDef.component({
         };
     }),
 
+    /**
+     * The `Host` definition is only executed on and visible to the server.
+     */
     Host: NoGapDef.defHost(function(SharedTools, Shared, SharedContext) {
         return {
             /**
@@ -314,9 +335,9 @@ module.exports = NoGapDef.component({
             __ctor: function () {
             },
 		
-	    /**
-	     * Is called once on each component after all components have been created.
-	     */
+      	    /**
+      	     * Is called once on each component after all components have been created.
+      	     */
             initHost: function() {
             },
 
@@ -324,11 +345,11 @@ module.exports = NoGapDef.component({
              * Private instance members.
              */
             Private: {
-	        /**
-	         * Is called only once per session and application start, 
-	         * when the instance for the given session has been created.
-	         * Will be removed once called.
-	         */
+      	        /**
+      	         * Is called only once per session and application start, 
+      	         * when the instance for the given session has been created.
+      	         * Will be removed once called.
+      	         */
                 __ctor: function () {
                 },
 
@@ -354,6 +375,9 @@ module.exports = NoGapDef.component({
         };
     }),
 
+    /**
+     * The `Client` definition is automatically deployed to every connected client.
+     */
     Client: NoGapDef.defClient(function(Tools, Instance, Context) {
         return {
       	    /**
@@ -453,7 +477,7 @@ The following is an example of a `NoGap` configuration. It requires at least two
  * `baseFolder`
   	* This is the folder, relative to your application (e.g. `app.js`) where you defined all NoGap components.
  * `files`
- 	* The actual component files (sans ".js"). Whenever you add a component, don't forget to list it here!
+  * The actual component files (sans ".js"). Whenever you add a component, don't forget to list it here!
 
 
 #### Optional Configuration parameters
@@ -461,12 +485,17 @@ The following is an example of a `NoGap` configuration. It requires at least two
  * `publicFolder` (Default = `pub/`)
  	* The folder to find all client asset files that cannot be found relative to a component.
  	* Usually this is used to store client-only and shared javascript libraries that do not have `NoGap` support (they are not defined as components).
- * `endpointImplementation.name` (Default = `HttpPost`)
- 	* Currently, only POST is available. Websockets will follow soon.
- 	* You can also implement your own transport layer if you want, but you probably don't.
- 	* If you are interested into the dirty details, have a look at [`HttpPostImpl` in `ComponentCommunications.js`](https://github.com/Domiii/NoGap/blob/master/lib/ComponentCommunications.js#L564)
-
-There are more, optional parameters. Documentation will come soon.
+ * `lazyLoad` (Default = true)
+  * Wether you want to explicitly send each component's client side to clients when necessary.
+ * `endpointImplementation` (set of options to configure the transport layer)
+  * `name` (Default = `HttpPost`)
+   	* Currently, only POST is available. Websockets will follow soon.
+   	* You can also implement your own transport layer if you want, but you probably don't.
+   	* If you are interested into the dirty details, have a look at [`HttpPostImpl` in `ComponentCommunications.js`](https://github.com/Domiii/NoGap/blob/master/lib/ComponentCommunications.js#L564)
+  * `traceKeepOpen` (Default = 0)
+    * This is for debugging your `keepOpen` and `flush` pairs. If you don't pair them up correctly, the client might wait forever.
+    * If your client does not receive any data, try setting this value to 4 and check if all calls pair up correctly.
+    * The value determines how many lines of stacktrace to show, relative to the first non-internal call; that is the first stackframe whose code is not located in the NoGap folder.
 
 
 #### Example Config
@@ -509,10 +538,29 @@ where `some-module` is the name you gave it in the package.json file.
 Check out [NPM JS](https://www.npmjs.org/) to see all available modules.
 
 
+Debuggability & security
+=============
+By default, each `Client` only receives code from `Client` and `Base` definitions. `Host`-only code is not available to the client. However, the names of absolute file paths are sent to the client to facilitate perfect debugging; i.e. all stacktraces and the debugger will refer to the correct line inside the actual host-resident component file. If that is of concern to you, let me know, and I'll move up TODO priority of name scrambling, or have a look at [`ComponentDef`'s `FactoryDef`, and the corresponding `def*` methods](https://github.com/Domiii/NoGap/blob/master/lib/ComponentDef.js#L71) yourself.
+
+
+Important Concept Terms
+=============
+TODO: Add links.
+
+* Component
+* Host
+* Client
+* Base (mergd into Client and Host)
+* Instance (set of all instance components)
+* Shared (set of all shared components)
+* Endpoint (refers to Client or Host)
+* Tools (set of functions to assist managing of components)
+* Context
+* Asset (an asset is content data, such as html and css code, images and more)
+* more...
+
 
 Final Words
 =============
 
-Good luck! You are recommended to take a look at the [`NoGap Sample App`](samples/sample_app) for a slightly more complete example of using `NoGap`.
-
-In case of questions, feel free to contact me.
+Good luck! In case of questions, feel free to contact me.
