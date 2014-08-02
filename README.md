@@ -24,23 +24,23 @@ Table of Contents
 
 <!-- toc -->
 
-* [[HelloWorld](samples/HelloWorld)](#helloworldsampleshelloworld)
+* [HelloWorld](#helloworld)
 * [Installation](#installation)
-* [[Samples](samples)<a name="samples"></a>](#samplessamplesa-namesamplesa)
-  * [[HelloWorld](samples/HelloWorld)](#helloworldsampleshelloworld)
-  * [[TwoWayStreet](samples/TwoWayStreet)<a name="twowaystreet"></a>](#twowaystreetsamplestwowaystreeta-nametwowaystreeta)
-  * [[TwoWayStreetAsync](samples/TwoWayStreetAsync)](#twowaystreetasyncsamplestwowaystreetasync)
-  * [[CodeSharingValidation](samples/CodeSharingValidation)](#codesharingvalidationsamplescodesharingvalidation)
-  * [[Assets](samples/Assets)](#assetssamplesassets)
+* [Samples](#samples)
+  * [HelloWorld](#helloworld)
+  * [TwoWayStreet](#twowaystreet)
+  * [TwoWayStreetAsync](#twowaystreetasync)
+  * [CodeSharingValidation](#codesharingvalidation)
+  * [Assets](#assets)
   * [Multiple Components](#multiple-components)
-  * [[Dynamic Loading of Components](samples/DynamicallyLoadedComponents)](#dynamic-loading-of-componentssamplesdynamicallyloadedcomponents)
-  * [[Simple Sample App](https://github.com/Domiii/NoGap/tree/master/samples/sample_app)](#simple-sample-apphttpsgithubcomdomiiinogaptreemastersamplessampleapp)
+  * [Dynamic Loading of Components](#dynamic-loading-of-components)
+  * [Simple Sample App](#simple-sample-app)
 * [Component Structure<a name="component_structure"></a>](#component-structurea-namecomponentstructurea)
   * [`Host`](#host)
   * [`Client`](#client)
   * [`Base`](#base)
   * [Component Skeleton<a name="component_skeleton"></a>](#component-skeletona-namecomponentskeletona)
-* [Getting Started<a name="getting_started"></a>](#getting-starteda-namegettingstarteda)
+* [Getting Started](#getting-started)
   * [Recommended File Structure](#recommended-file-structure)
     * [`components/`](#components)
     * [`components/models/`](#componentsmodels)
@@ -49,15 +49,16 @@ Table of Contents
     * [`appConfig.js`](#appconfigjs)
     * [package.json](#packagejson)
 * [Debuggability & security](#debuggability-security)
-* [Important Concept Terms](#important-concept-terms)
+* [Important Terms](#important-terms)
 * [Final Words](#final-words)
 
 <!-- toc stop -->
 
 
 
-[HelloWorld](samples/HelloWorld)
+HelloWorld
 =============
+[Link](samples/HelloWorld).
 
 ```js
 var NoGapDef = require('nogap').Def;
@@ -81,7 +82,7 @@ module.exports = NoGapDef.component({
 
 *What is the trick?*
  * The `Client` code is automatically deployed to the client
- * `initClient` is then automatically called on the client, right after installation
+ * `initClient` is then automatically called on the client, right afterwards
 
 
 Installation
@@ -95,8 +96,9 @@ Installation
 * Done.
 
 
-[Samples](samples)<a name="samples"></a>
+Samples
 =============
+[Link](samples).<a name="samples"></a>
 
 The Samples highlight some (soon, all!) features of the NoGap framework and how they are used. To run the samples:
 
@@ -111,7 +113,9 @@ The Samples highlight some (soon, all!) features of the NoGap framework and how 
  6. Start playing!
 
 
-## [HelloWorld](samples/HelloWorld)
+## HelloWorld
+[Link](samples/HelloWorld).
+
 
 ```js
 var NoGapDef = require('nogap').Def;
@@ -138,7 +142,8 @@ module.exports = NoGapDef.component({
  * `initClient` is then automatically called on the client, right after installation
 
 
-## [TwoWayStreet](samples/TwoWayStreet)<a name="twowaystreet"></a>
+## TwoWayStreet
+[Link](samples/TwoWayStreet).<a name="twowaystreet"></a>
 
 ```js
 var NoGapDef = require('nogap').Def;
@@ -193,7 +198,8 @@ NoGapDef.component({
  	* Host: `this.client`
 
 
-## [TwoWayStreetAsync](samples/TwoWayStreetAsync)
+## TwoWayStreetAsync
+[Link](samples/TwoWayStreetAsync).
 
 Now that our code keeps growing and you are starting to get the picture, let us just focus on code snippets from now on.
 
@@ -218,7 +224,8 @@ tellClientSomething: function() {
    * Once you sent everything to the client, call `this.Tools.flush()`
 
 
-## [CodeSharingValidation](samples/CodeSharingValidation)
+## CodeSharingValidation
+[Link](samples/CodeSharingValidation).
 
 
 ```js
@@ -253,7 +260,8 @@ tellClientSomething: function() {
 
 
 
-## [Assets](samples/Assets)
+## Assets
+[Link](samples/Assets).
 
 ```js
 NoGapDef.component({
@@ -304,7 +312,8 @@ The [Simple Sample App](https://github.com/Domiii/NoGap/tree/master/samples/samp
 
 
 
-## [Dynamic Loading of Components](samples/DynamicallyLoadedComponents)
+## Dynamic Loading of Components
+<!-- [Link](samples/DynamicLoading). -->
 
 TODO: Sample not done yet...
  
@@ -313,7 +322,8 @@ TODO: Sample not done yet...
   * Then, call `this.Tools.requestClientComponents(names, callback);` to lazily load components from `Host` or from `Client`
 
 
-## [Simple Sample App](https://github.com/Domiii/NoGap/tree/master/samples/sample_app)
+## Simple Sample App
+[Link](samples/sample_app).
 
 This App shows how to start building a real application with NoGap. It uses `Angular`, `Boostrap` and `Font-Awesome` to do some real client-side rendering. IMPORTANT: None of these libraries are required. You can build your frontend and backend any way you want.
 
@@ -483,8 +493,9 @@ module.exports = NoGapDef.component({
 ```
 
 
-Getting Started<a name="getting_started"></a>
+Getting Started
 =============
+<a name="getting_started"></a>
 
 This tutorial is aimed at those who are new to `NoGap`, and new to `Node` in general.
 It should help you bridge the gap from the [Code Snippets](#samples) to a real-world application.
@@ -612,9 +623,9 @@ Debuggability & security
 By default, each `Client` only receives code from `Client` and `Base` definitions. `Host`-only code is not available to the client. However, the names of absolute file paths are sent to the client to facilitate perfect debugging; i.e. all stacktraces and the debugger will refer to the correct line inside the actual host-resident component file. If that is of concern to you, let me know, and I'll move up TODO priority of name scrambling, or have a look at [`ComponentDef`'s `FactoryDef`, and the corresponding `def*` methods](https://github.com/Domiii/NoGap/blob/master/lib/ComponentDef.js#L71) yourself.
 
 
-Important Concept Terms
+Important Terms
 =============
-TODO: Add links.
+TODO: Add links + terms.
 
 * Component
 * Host

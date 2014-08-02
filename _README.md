@@ -23,8 +23,9 @@ Table of Contents
 <!-- toc -->
 
 
-[HelloWorld](samples/HelloWorld)
+HelloWorld
 =============
+[Link](samples/HelloWorld).
 
 ```js
 var NoGapDef = require('nogap').Def;
@@ -62,8 +63,9 @@ Installation
 * Done.
 
 
-[Samples](samples)<a name="samples"></a>
+Samples
 =============
+[Link](samples).<a name="samples"></a>
 
 The Samples highlight some (soon, all!) features of the NoGap framework and how they are used. To run the samples:
 
@@ -78,7 +80,9 @@ The Samples highlight some (soon, all!) features of the NoGap framework and how 
  6. Start playing!
 
 
-## [HelloWorld](samples/HelloWorld)
+## HelloWorld
+[Link](samples/HelloWorld).
+
 
 ```js
 var NoGapDef = require('nogap').Def;
@@ -105,7 +109,8 @@ module.exports = NoGapDef.component({
  * `initClient` is then automatically called on the client, right after installation
 
 
-## [TwoWayStreet](samples/TwoWayStreet)<a name="twowaystreet"></a>
+## TwoWayStreet
+[Link](samples/TwoWayStreet).<a name="twowaystreet"></a>
 
 ```js
 var NoGapDef = require('nogap').Def;
@@ -160,7 +165,8 @@ NoGapDef.component({
  	* Host: `this.client`
 
 
-## [TwoWayStreetAsync](samples/TwoWayStreetAsync)
+## TwoWayStreetAsync
+[Link](samples/TwoWayStreetAsync).
 
 Now that our code keeps growing and you are starting to get the picture, let us just focus on code snippets from now on.
 
@@ -185,7 +191,8 @@ tellClientSomething: function() {
    * Once you sent everything to the client, call `this.Tools.flush()`
 
 
-## [CodeSharingValidation](samples/CodeSharingValidation)
+## CodeSharingValidation
+[Link](samples/CodeSharingValidation).
 
 
 ```js
@@ -220,7 +227,8 @@ tellClientSomething: function() {
 
 
 
-## [Assets](samples/Assets)
+## Assets
+[Link](samples/Assets).
 
 ```js
 NoGapDef.component({
@@ -271,7 +279,8 @@ The [Simple Sample App](https://github.com/Domiii/NoGap/tree/master/samples/samp
 
 
 
-## [Dynamic Loading of Components](samples/DynamicallyLoadedComponents)
+## Dynamic Loading of Components
+<!-- [Link](samples/DynamicLoading). -->
 
 TODO: Sample not done yet...
  
@@ -280,7 +289,8 @@ TODO: Sample not done yet...
   * Then, call `this.Tools.requestClientComponents(names, callback);` to lazily load components from `Host` or from `Client`
 
 
-## [Simple Sample App](https://github.com/Domiii/NoGap/tree/master/samples/sample_app)
+## Simple Sample App
+[Link](samples/sample_app).
 
 This App shows how to start building a real application with NoGap. It uses `Angular`, `Boostrap` and `Font-Awesome` to do some real client-side rendering. IMPORTANT: None of these libraries are required. You can build your frontend and backend any way you want.
 
@@ -450,8 +460,9 @@ module.exports = NoGapDef.component({
 ```
 
 
-Getting Started<a name="getting_started"></a>
+Getting Started
 =============
+<a name="getting_started"></a>
 
 This tutorial is aimed at those who are new to `NoGap`, and new to `Node` in general.
 It should help you bridge the gap from the [Code Snippets](#samples) to a real-world application.
@@ -579,9 +590,9 @@ Debuggability & security
 By default, each `Client` only receives code from `Client` and `Base` definitions. `Host`-only code is not available to the client. However, the names of absolute file paths are sent to the client to facilitate perfect debugging; i.e. all stacktraces and the debugger will refer to the correct line inside the actual host-resident component file. If that is of concern to you, let me know, and I'll move up TODO priority of name scrambling, or have a look at [`ComponentDef`'s `FactoryDef`, and the corresponding `def*` methods](https://github.com/Domiii/NoGap/blob/master/lib/ComponentDef.js#L71) yourself.
 
 
-Important Concept Terms
+Important Terms
 =============
-TODO: Add links.
+TODO: Add links + terms.
 
 * Component
 * Host
