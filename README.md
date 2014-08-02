@@ -35,11 +35,11 @@ Table of Contents
   * [Multiple Components](#multiple-components)
   * [Dynamic Loading of Components](#dynamic-loading-of-components)
   * [Simple Sample App](#simple-sample-app)
-* [Component Structure<a name="component_structure"></a>](#component-structurea-namecomponentstructurea)
+* [Component Structure](#component-structure)
   * [`Host`](#host)
   * [`Client`](#client)
   * [`Base`](#base)
-  * [Component Skeleton<a name="component_skeleton"></a>](#component-skeletona-namecomponentskeletona)
+  * [Component Skeleton](#component-skeleton)
 * [Getting Started](#getting-started)
   * [Recommended File Structure](#recommended-file-structure)
     * [`components/`](#components)
@@ -328,8 +328,9 @@ TODO: Sample not done yet...
 This App shows how to start building a real application with NoGap. It uses `Angular`, `Boostrap` and `Font-Awesome` to do some real client-side rendering. IMPORTANT: None of these libraries are required. You can build your frontend and backend any way you want.
 
 
-Component Structure<a name="component_structure"></a>
+Component Structure
 =============
+<a name="component_structure"></a>
 
 NOTE: The following is a rough explanation of many of NoGap's features. You are recommended to compare the explanation to their actual implementation in the [Simple Sample App](https://github.com/Domiii/NoGap/tree/master/samples/sample_app) to better understand them.
 
@@ -350,7 +351,8 @@ Everything from the `Base` definition is merged into both, `Host` and `Client`. 
 Inside `Base` members, you can call `this.someMethod` even if `someMethod` is not declared in `Base`, but instead is declared in `Host` as well as `Client`. At the same time, you can call `this.someBaseMethod` from each endpoint definition. That enables you to easily have shared code call endpoint-specific code and vice versa, thereby supporting polymorphism and encapsulation.
 
 
-## Component Skeleton<a name="component_skeleton"></a>
+## Component Skeleton
+<a name="component_skeleton"></a>
 This skeleton code summarizes (most of) available component structure:
 
 
