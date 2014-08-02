@@ -20,40 +20,7 @@ Note that currently, the only dependency of NoGap is `Node` and some of its modu
 Table of Contents
 =============
 
-
-
 <!-- toc -->
-
-* [[HelloWorld](samples/HelloWorld)](#helloworldsampleshelloworld)
-* [Installation](#installation)
-* [[Samples](samples)<a name="samples"></a>](#samplessamplesa-namesamplesa)
-  * [[HelloWorld](samples/HelloWorld)](#helloworldsampleshelloworld)
-  * [[TwoWayStreet](samples/TwoWayStreet)<a name="twowaystreet"></a>](#twowaystreetsamplestwowaystreeta-nametwowaystreeta)
-  * [[TwoWayStreetAsync](samples/TwoWayStreetAsync)](#twowaystreetasyncsamplestwowaystreetasync)
-  * [[CodeSharingValidation](samples/CodeSharingValidation)](#codesharingvalidationsamplescodesharingvalidation)
-  * [[Assets](samples/Assets)](#assetssamplesassets)
-  * [Multiple Components](#multiple-components)
-  * [[Dynamic Loading of Components](samples/DynamicallyLoadedComponents)](#dynamic-loading-of-componentssamplesdynamicallyloadedcomponents)
-  * [[Simple Sample App](https://github.com/Domiii/NoGap/tree/master/samples/sample_app)](#simple-sample-apphttpsgithubcomdomiiinogaptreemastersamplessampleapp)
-* [Component Structure<a name="component_structure"></a>](#component-structurea-namecomponentstructurea)
-  * [`Host`](#host)
-  * [`Client`](#client)
-  * [`Base`](#base)
-  * [Component Skeleton<a name="component_skeleton"></a>](#component-skeletona-namecomponentskeletona)
-* [Getting Started<a name="getting_started"></a>](#getting-starteda-namegettingstarteda)
-  * [Recommended File Structure](#recommended-file-structure)
-    * [`components/`](#components)
-    * [`components/models/`](#componentsmodels)
-    * [`components/ui/`](#componentsui)
-    * [`app.js`](#appjs)
-    * [`appConfig.js`](#appconfigjs)
-    * [package.json](#packagejson)
-* [Debuggability & security](#debuggability-security)
-* [Important Concept Terms](#important-concept-terms)
-* [Final Words](#final-words)
-
-<!-- toc stop -->
-
 
 
 [HelloWorld](samples/HelloWorld)
@@ -81,7 +48,7 @@ module.exports = NoGapDef.component({
 
 *What is the trick?*
  * The `Client` code is automatically deployed to the client
- * `initClient` is then automatically called on the client, right after installation
+ * `initClient` is then automatically called on the client, right afterwards
 
 
 Installation

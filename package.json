@@ -11,12 +11,6 @@
     "type": "git",
     "url": "https://github.com/Domiii/NoGap"
   },
-  "dependencies": {
-    "squishy": "*",
-    "mime": "*"
-  },
-  "devDependencies": {},
-  "scripts": {},
   "engines": {
     "node": ">= 0.8.0"
   },
@@ -26,5 +20,18 @@
   "bugs": {
     "url": "https://github.com/Domiii/NoGap/issues"
   },
-  "homepage": "https://github.com/Domiii/NoGap"
+  "homepage": "https://github.com/Domiii/NoGap",
+
+  "dependencies": {
+    "squishy": "*",
+    "mime": "*"
+  },
+
+  "devDependencies": {
+    "marked-toc": "*"
+  },
+
+  "scripts": {
+    "precommit": "node pre-commit"
+  }
 }
