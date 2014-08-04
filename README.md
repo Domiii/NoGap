@@ -16,6 +16,8 @@ When starting on a new component, you can save a bit of time by copying the [typ
 
 Note that currently, the only dependency of NoGap is `Node` and some of its modules but even that is planned to be removed in the future.
 
+NOTE: NoGap is still in Beta. Things are still changing. If you are concerned about that, feel free to contact me directly.
+
 
 Table of Contents
 =============
@@ -34,6 +36,7 @@ Table of Contents
   * [Assets](#assets)
   * [Multiple Components](#multiple-components)
   * [Dynamic Loading of Components](#dynamic-loading-of-components)
+  * [Request &lt;-> Reply Pairs](#request-lt-reply-pairs)
   * [Simple Sample App](#simple-sample-app)
 * [Component Structure](#component-structure)
   * [`Host`](#host)
@@ -74,13 +77,13 @@ module.exports = NoGapDef.component({
 });
 ```
 
-*Concepts*
+**Concepts**
  * Get the NoGap module's `Def` helper: `var NoGapDef = require('nogap').Def;`
  * Define a new component: `NoGapDef.component({ ... });`
  * Add a `Client` definition to the component: `Client: NoGapDef.defClient(function(Tools, Instance, Context) { ... })`
  * Add `initClient` method  to `Client`
 
-*What is the trick?*
+**What is the trick?**
  * The `Client` code is automatically deployed to the client
  * `initClient` is then automatically called on the client, right afterwards
 
@@ -131,13 +134,13 @@ module.exports = NoGapDef.component({
 });
 ```
 
-*Concepts*
+**Concepts**
  * Get the NoGap module's `Def` helper: `var NoGapDef = require('nogap').Def;`
  * Define a new component: `NoGapDef.component({ ... });`
  * Add a `Client` definition to the component: `Client: NoGapDef.defClient(function(Tools, Instance, Context) { ... })`
  * Add `initClient` method  to `Client`
 
-*What is the trick?*
+**What is the trick?**
  * The `Client` code is automatically deployed to the client
  * `initClient` is then automatically called on the client, right after installation
 
@@ -154,7 +157,7 @@ NoGapDef.component({
 
         return {
             Public: {
-                tellClientSomething: function() {
+                tellClientSomething: function(sender) {
                     this.client.showHostMessage('We have exchanged ' + ++iAttempt + ' messages.');
                 }
             }
@@ -182,20 +185,20 @@ NoGapDef.component({
 });
 ```
 
-*Concepts*
+**Concepts**
  * Add a `Client` definition to the component: `Client: NoGapDef.defClient(function(Tools, Instance, Context) { ... })`
  * `Client.initClient`
  * Add a `Host` definition to the component: `Host: NoGapDef.defHost(function(SharedTools, Shared, SharedContext) { ... })`
  * `Host.Public`
  * `Client.Public`
 
-*What is the trick?*
+**What is the trick?**
  * `this.host` gives us an object on which we can call `Public` methods on the host
- 	* For example, we can call `tellClientSomething` which is a method that was defined in `Host.Public`
+  * For example, we can call `tellClientSomething` which is a method that was defined in `Host.Public`
  * Once the host receives our request, it calls `this.client.showHostMessage`
  * Note:
- 	* Client: `this.host` vs.
- 	* Host: `this.client`
+  * Client: `this.host` vs.
+  * Host: `this.client`
 
 
 ## TwoWayStreetAsync
@@ -218,7 +221,7 @@ tellClientSomething: function() {
 }
 ```
 
-*New Concepts*
+**New Concepts**
  * We need to perform an asynchronous request whose result is to be sent to the other side:
    * In that case, first call `this.Tools.keepOpen()`, so the client connection will not be closed automatically
    * Once you sent everything to the client, call `this.Tools.flush()`
@@ -229,18 +232,18 @@ tellClientSomething: function() {
 
 
 ```js
-	Base: NoGapDef.defBase(function(SharedTools, Shared, SharedContext) { return {
-	    validateText: function(text) {
-	        if (text.indexOf('a') >= 0 || text.indexOf('A') >= 0) {
-	            return null;
-	        }
-	        return text.trim();
-	    }
-	};}),
+  Base: NoGapDef.defBase(function(SharedTools, Shared, SharedContext) { return {
+      validateText: function(text) {
+          if (text.indexOf('a') >= 0 || text.indexOf('A') >= 0) {
+              return null;
+          }
+          return text.trim();
+      }
+  };}),
 
     Host: NoGapDef.defHost(function(SharedTools, Shared, SharedContext) { return {
         Public: {
-            setValue: function(value) {
+            setValue: function(sender, value) {
                 this.value = this.Shared.validateText(value);
                 // ...
             }
@@ -248,13 +251,13 @@ tellClientSomething: function() {
     };}),
 
     Client: NoGapDef.defClient(function(Tools, Instance, Context) { return {
-        	// ...
+          // ...
                     value = this.validateText(value);
             // ...
     };})
 ```
 
-*New Concepts*
+**New Concepts**
  * The `Base` definition is merged into both `Client` and `Host`
  * You can use it to easily share code between them
 
@@ -295,7 +298,7 @@ NoGapDef.component({
 });
 ```
 
-*New Concepts*
+**New Concepts**
   * So far, you can define two types of file-based assets:
     * `AutoIncludes` defines lists of `js` and `css` files that will be automatically included in the client header
     * `Files` will be read and it's contents will be available through the clients `assets` variable.
@@ -306,7 +309,7 @@ NoGapDef.component({
 
 The [Simple Sample App](https://github.com/Domiii/NoGap/tree/master/samples/sample_app/components) already does this.
  
-*Examples of multi-component code:*
+**Examples of multi-component code**
   * Call `say` on `ComponentA`: `Shared.ComponentA.say('hello');`
   * Call `somePublicMethod` on the client of a `ComponentB` instance: `this.Instance.ComponentB.client.somePublicMethod(some, data);`
 
@@ -315,11 +318,51 @@ The [Simple Sample App](https://github.com/Domiii/NoGap/tree/master/samples/samp
 ## Dynamic Loading of Components
 <!-- [Link](samples/DynamicLoading). -->
 
+This feature lets clients request components on demand. This way, complex web applications can send code and assets not before they are needed, thus saving bandwidth and improving I/O performance.
+
 TODO: Sample not done yet...
  
-*New Concepts*
+**New Concepts**
   * First, set `lazyLoad` to `1` in the config
-  * Then, call `this.Tools.requestClientComponents(names, callback);` to lazily load components from `Host` or from `Client`
+  * Then, call `this.Tools.requestClientComponents(names, callback);` to lazily load components from `Host` or from `Client` *instance objects*.
+
+
+## Request &lt;-> Reply Pairs
+<!-- [Link](samples/). -->
+
+This feature 
+
+TODO: Sample not done yet...
+
+Idea:
+
+    Host: {
+      Public: {
+        checkIn: function(sender, name) {
+          sender.reply('interesting! - ' + some, myStuff);
+        }
+      }
+    }
+
+    // ...
+
+    Client: {
+
+      // ...
+
+      initClient: {
+        this.Host.checkIn('Average Joe')
+        .onReply(function(message, stuff) {
+          // server sent something back
+          // ...
+      });
+      }
+    }
+ 
+**Concepts**
+  * When calling a `Host.Public` method, in addition to the arguments sent by the client, there is an argument injected before all the others, called `sender`.
+  * When calling a `Host.Public` method, you can register a callback by calling `onReply`.
+  * The `Host` can then call `sender.reply` which will lead to the `onReply` callback to be called.
 
 
 ## Simple Sample App
@@ -332,7 +375,7 @@ Component Structure
 =============
 <a name="component_structure"></a>
 
-NOTE: The following is a rough explanation of many of NoGap's features. You are recommended to compare the explanation to their actual implementation in the [Simple Sample App](https://github.com/Domiii/NoGap/tree/master/samples/sample_app) to better understand them.
+NOTE: The following is a rough explanation of many of NoGap's features. You are recommended to compare the explanation to their actual implementation in the [Simple Sample App](samples/sample_app) to better understand them.
 
 Every component has two endpoint definitions, called `Host` and `Client`, as well as shared code, inside the so-called `Base` definition. You provide `Host`, `Client` and `Base` definitions by calling `defHost`, `defClient` and `defBase` respectively. The only argument to the `def` function is your **component definition**: A function with three arguments that returns the actual definition object.
 
@@ -341,7 +384,8 @@ Every component has two endpoint definitions, called `Host` and `Client`, as wel
 
  1. The **shared object** of a component exists only once for the entire application. It is what is returned if you `require` the component file in Node. You can access all of shared component objects through the `Shared` set which is the second argument of every `Host`'s *component definition*.
 
-2. The **instance object** of a component exists once for every client. Every client that connects to the server, gets its own set of instances of every active component. On the `Host` side, the *instance object* of a component is defined as the merged result of all members of `Private` and `Public` which we call instance members. These instance members are accessible through `this.Instance` from **instance code**, that is code inside of `Private` and `Public` properties. If you want to hook into client connection and component bootstrapping events, simply defined `onNewClient` or `onClientBootstrap` functions inside `Host.Private`. You can access the respective *shared members* through `this.Shared` from *instance code*. You can directly call `Public` instance members on the client through `this.client.someClientPublicMethod(some, data)`. Being able to directly call a function on a different computer or in a different program is called [RPC (Remote Procedure Call)](http://en.wikipedia.org/wiki/Remote_procedure_call).
+2. The **instance object** of a component exists once for every client. Every client that connects to the server, gets its own set of instances of every active component. On the `Host` side, the *instance object* of a component is defined as the merged result of all members of `Private` and `Public` which we call *instance members*. These instance members are accessible through `this.Instance` from **instance code**, that is code inside of `Private` and `Public` properties. If you want to hook into client connection and component bootstrapping events, simply defined `onNewClient` or `onClientBootstrap` functions inside `Host.Private`. You can access the respective *shared members* through `this.Shared` from *instance code*.
+Inside a `Host` instance object, you can directly call `Public` instance members on the client through `this.client.someClientPublicMethod(some, data)`. Being able to directly call a function on a different computer or in a different program is called [RPC (Remote Procedure Calls)](http://en.wikipedia.org/wiki/Remote_procedure_call). Similarly, `Client` instances can directly call `this.host.someHostPublicMethod`. Note that when you call `Host.Public` methods, an argument gets injected before all other arguments, called the `sender`. The `sender` argument gives context sensitive information on where the call originated from and can be used for simple request &lt;-> **reply** pairs, and for debugging purposes.
 
 ## `Client`
 The set of all `Client` endpoint definition is automatically sent to the client and installed, as soon a client connects. On the client side, `this.Shared` and `this.Instance` refer to the same object, and `Private` and `Public` are both merged into the `Client` *component definition* itself. If you want to load components dynamically (or lazily), during certain events, you need to set the `lazyLoad` config parameter to `true` or `1`.
@@ -415,10 +459,10 @@ module.exports = NoGapDef.component({
              */
             __ctor: function () {
             },
-		
-      	    /**
-      	     * Is called once on each component after all components have been created.
-      	     */
+    
+            /**
+             * Is called once on each component after all components have been created.
+             */
             initHost: function() {
             },
 
@@ -426,11 +470,11 @@ module.exports = NoGapDef.component({
              * Private instance members.
              */
             Private: {
-      	        /**
-      	         * Is called only once per session and application start, 
-      	         * when the instance for the given session has been created.
-      	         * Will be removed once called.
-      	         */
+                /**
+                 * Is called only once per session and application start, 
+                 * when the instance for the given session has been created.
+                 * Will be removed once called.
+                 */
                 __ctor: function () {
                 },
 
@@ -461,18 +505,18 @@ module.exports = NoGapDef.component({
      */
     Client: NoGapDef.defClient(function(Tools, Instance, Context) {
         return {
-      	    /**
-      	     * Called once after creation of the client-side instance.
-      	     * Will be removed once called.
-      	     */
+            /**
+             * Called once after creation of the client-side instance.
+             * Will be removed once called.
+             */
             __ctor: function () {
             },
 
-      	    /**
-      	     * Called once after all currently deployed client-side 
-      	     * components have been created.
-      	     * Will be removed once called.
-      	     */
+            /**
+             * Called once after all currently deployed client-side 
+             * components have been created.
+             * Will be removed once called.
+             */
             initClient: function() {
 
             },
@@ -506,8 +550,8 @@ Note that the [Simple Sample App](https://github.com/Domiii/NoGap/tree/master/sa
 ## Recommended File Structure
     .
     +-- components/
-    |	+-- models/
-    |	+-- ui/
+    | +-- models/
+    | +-- ui/
     +-- lib/
     +-- pub/
     +-- app.js
@@ -557,7 +601,7 @@ It contains some basic constant data that your application needs, such as databa
 The following is an example of a `NoGap` configuration. It requires at least two entries:
 
  * `baseFolder`
-  	* This is the folder, relative to your application (e.g. `app.js`) where you defined all NoGap components.
+    * This is the folder, relative to your application (e.g. `app.js`) where you defined all NoGap components.
  * `files`
   * The actual component files (sans ".js"). Whenever you add a component, don't forget to list it here!
 
@@ -565,15 +609,15 @@ The following is an example of a `NoGap` configuration. It requires at least two
 #### Optional Configuration parameters
 
  * `publicFolder` (Default = `pub/`)
- 	* The folder to find all client asset files that cannot be found relative to a component.
- 	* Usually this is used to store client-only and shared javascript libraries that do not have `NoGap` support (they are not defined as components).
+  * The folder to find all client asset files that cannot be found relative to a component.
+  * Usually this is used to store client-only and shared javascript libraries that do not have `NoGap` support (they are not defined as components).
  * `lazyLoad` (Default = true)
   * Wether you want to explicitly send each component's client side to clients when necessary.
  * `endpointImplementation` (set of options to configure the transport layer)
   * `name` (Default = `HttpPost`)
-   	* Currently, only POST is available. Websockets will follow soon.
-   	* You can also implement your own transport layer if you want, but you probably don't.
-   	* If you are interested into the dirty details, have a look at [`HttpPostImpl` in `ComponentCommunications.js`](https://github.com/Domiii/NoGap/blob/master/lib/ComponentCommunications.js#L564)
+    * Currently, only POST is available. Websockets will follow soon.
+    * You can also implement your own transport layer if you want, but you probably don't.
+    * If you are interested into the dirty details, have a look at [`HttpPostImpl` in `ComponentCommunications.js`](https://github.com/Domiii/NoGap/blob/master/lib/ComponentCommunications.js#L564)
   * `traceKeepOpen` (Default = 0)
     * This is for debugging your `keepOpen` and `flush` pairs. If you don't pair them up correctly, the client might wait forever.
     * If your client does not receive any data, try setting this value to 4 and check if all calls pair up correctly.
@@ -627,7 +671,7 @@ By default, each `Client` only receives code from `Client` and `Base` definition
 
 Important Terms
 =============
-TODO: Add links + terms.
+TODO: Add more links + terms.
 
 * Component
 * Host
