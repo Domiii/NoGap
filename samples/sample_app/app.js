@@ -40,6 +40,8 @@ var app;
     app.use(session({
         // secret token
         secret: 'mySuperCoolSecret123qwerty',
+        resave: true,
+        saveUninitialized: true,
         
         // default cookie settings
         cookie: {

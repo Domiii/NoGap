@@ -17,6 +17,7 @@
   "license": "MIT",
   "readmeFilename": "README.md",
   "description": "RPC + improved code sharing + asset management + some other good stuff for enjoyable Host <-> Client architecture development.",
+  
   "bugs": {
     "url": "https://github.com/Domiii/NoGap/issues"
   },

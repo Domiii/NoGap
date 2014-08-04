@@ -239,7 +239,6 @@ module.exports = NoGapDef.component({
                 if (!!userName) {
                     // logged in:
                     this.userName = userName;
-                    console.log(this.userName);
                     if (mainScope) {
                         mainScope.userName = userName;
                     }

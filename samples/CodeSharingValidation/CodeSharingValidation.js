@@ -21,7 +21,7 @@ NoGapDef.component({
 
     Host: NoGapDef.defHost(function(SharedTools, Shared, SharedContext) { return {
         Public: {
-            setValue: function(value) {
+            setValue: function(sender, value) {
                 this.value = this.Shared.validateText(value);
 
                 var err;
@@ -92,6 +92,8 @@ var expressApp;
     expressApp.use(session({
         // secret token
         secret: 'mySuperCoolSecret123qwerty',
+        resave: true,
+        saveUninitialized: true,
         
         // default cookie settings
         cookie: {

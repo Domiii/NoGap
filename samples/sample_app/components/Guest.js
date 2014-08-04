@@ -31,7 +31,7 @@ module.exports = NoGapDef.component({
             /**
              * This command is available to any client, via this.host.tryLogin(userName);
              */
-            tryLogin: function(userName) {
+            tryLogin: function(sender, userName) {
                 // validate & fix name
                 userName = Shared.ValidationUtil.validateNameOrTitle(userName);
                 if (!userName) {
@@ -42,6 +42,7 @@ module.exports = NoGapDef.component({
                 }
                 else if (userName.indexOf('bad') >= 0) {
                     // keep open connection for asynchronous operation
+                    // delay reply for a second
                     this.Tools.keepOpen();
                     setTimeout(function() {
                         // notify client

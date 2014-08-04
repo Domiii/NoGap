@@ -19,8 +19,7 @@ NoGapDef.component({
             },
 
             Public: {
-                tellClientSomething: function() {
-                    this.Tools.keepOpen();
+                tellClientSomething: function(sender) {
                     this.client.showHostMessage('We have exchanged ' + ++iAttempt + ' messages.');
                 }
             }
@@ -69,6 +68,8 @@ var expressApp;
     expressApp.use(session({
         // secret token
         secret: 'mySuperCoolSecret123qwerty',
+        resave: true,
+        saveUninitialized: true,
         
         // default cookie settings
         cookie: {

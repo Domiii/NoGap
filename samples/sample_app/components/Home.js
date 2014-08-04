@@ -31,7 +31,7 @@ module.exports = NoGapDef.component({
             },
 
             Public: {
-            	logout: function() {
+            	logout: function(sender) {
             		// destroy session:
             		var sess = this.Context.session;
             		sess.destroy();

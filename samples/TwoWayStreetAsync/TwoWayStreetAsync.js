@@ -19,10 +19,15 @@ NoGapDef.component({
             },
 
             Public: {
-                tellClientSomething: function() {
+                tellClientSomething: function(sender) {
+                    // signal that the client needs to wait for an asynchronous operation
+                    this.Tools.keepOpen();
+
                     // wait 500 milliseconds before replying
                     setTimeout(function() {
                         this.client.showHostMessage('We have exchanged ' + ++iAttempt + ' messages.');
+
+                        // signal that the client does not have to wait anymore for this operation
                         this.Tools.flush();
                     }.bind(this), 500);
                 }
@@ -72,6 +77,8 @@ var expressApp;
     expressApp.use(session({
         // secret token
         secret: 'mySuperCoolSecret123qwerty',
+        resave: true,
+        saveUninitialized: true,
         
         // default cookie settings
         cookie: {
