@@ -338,8 +338,10 @@ Idea:
 
     Host: {
       Public: {
+        myStuff: [...],
+
         checkIn: function(sender, name) {
-          sender.reply('interesting! - ' + some, myStuff);
+          sender.reply('Thank you, ' + name + '!', myStuff);
         }
       }
     }
@@ -351,7 +353,7 @@ Idea:
       // ...
 
       initClient: {
-        this.Host.checkIn('Average Joe')
+        this.host.checkIn('Average Joe')
         .onReply(function(message, stuff) {
           // server sent something back
           // ...
@@ -360,8 +362,8 @@ Idea:
     }
  
 **Concepts**
-  * When calling a `Host.Public` method, in addition to the arguments sent by the client, there is an argument injected before all the others, called `sender`.
-  * When calling a `Host.Public` method, you can register a callback by calling `onReply`.
+  * When calling a `Host.Public` method (e.g. `checkIn`), in addition to the arguments sent by the client, there is an argument injected before all the others, called `sender`.
+  * When calling a `Host.Public` method, you can register a callback by calling `onReply` (e.g. `checkIn(...).onReply(function(...) { ... }`).
   * The `Host` can then call `sender.reply` which will lead to the `onReply` callback to be called.
 
 
