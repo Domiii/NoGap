@@ -488,6 +488,23 @@ module.exports = NoGapDef.component({
             initClient: function() {
 
             },
+
+            /**
+             * Called after the given component has been loaded in the client.
+             * NOTE: This is mostly interesting when components are dynamically loaded.
+             */
+            onNewComponent: function(newComponent) {
+
+            },
+
+            /**
+             * Called after the given batch of components has been loaded in the client.
+             * This is called after `onNewComponent` has been called on each individual component.
+             * NOTE: This is mostly interesting when components are dynamically loaded.
+             */
+            onNewComponents: function(newComponents) {
+
+            },
             
             /**
              * This is optional and will be merged into the Client instance,
