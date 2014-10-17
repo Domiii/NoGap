@@ -356,7 +356,7 @@ Every component has two endpoint definitions, called `Host` and `Client`, as wel
 Inside a `Host` instance object, you can directly call `Public` instance members on the client through `this.client.someClientPublicMethod(some, data)`. Being able to directly call a function on a different computer or in a different program is called [RPC (Remote Procedure Calls)](http://en.wikipedia.org/wiki/Remote_procedure_call). Similarly, `Client` instances can directly call `this.host.someHostPublicMethod`. Note that when you call `Host.Public` methods, an argument gets injected before all other arguments, called the `sender`. The `sender` argument gives context sensitive information on where the call originated from and can be used for simple request &lt;-> **reply** pairs, and for debugging purposes.
 
 ## `Client`
-The set of all `Client` endpoint definition is automatically sent to the client and installed, as soon a client connects. On the client side, `this.Shared` and `this.Instance` refer to the same object, and `Private` and `Public` are both merged into the `Client` *component definition* itself. If you want to load components dynamically (or lazily), during certain events, you need to set the `lazyLoad` config parameter to `true` or `1`.
+The set of all `Client` endpoint definition is automatically sent to the client and installed, as soon a client connects. On the client side, `this.Shared` and `this.Instance` refer to the same object, and `Private` and `Public` are both merged into the `Client` *component definition* itself. If you want to load components dynamically (or lazily; `lazyLoad` is set to 1), during certain events, you need to set the `lazyLoad` config parameter to `true` or `1`.
 
 ## `Base`
 Everything from the `Base` definition is merged into both, `Host` and `Client`. `Public` and `Private` are also merged correspondingly. Since `Host` and `Client` operate slightly different, certain naming decisions had to be made seemingly in favor of one over the other. E.g. the `Shared` concept does not exist on client side (because a `Client` only contains a single instance of all components), so there, it simply is the same as `Instance`.
@@ -382,6 +382,15 @@ module.exports = NoGapDef.component({
      * If you define more than one unnamed component per file, you will see an error.
      */
     Name: undefined,
+
+    /**
+     * Array of names (strings) of all components to also be installed 
+     * when installing this component.
+     * This is to signal that one component depends on or 
+     * requires use of another.
+     * NOTE: This is important when components are dynamically loaded (`lazyLoad` = 1).
+     */
+    Includes: [ 'Component1', 'SomethingElse' ],
 
     /**
      * The `Base` definition is merged into both, `Host` and `Client`
@@ -429,7 +438,8 @@ module.exports = NoGapDef.component({
             },
     
             /**
-             * Is called once on each component after all components have been created.
+             * Is called once on each component after 
+             * all components have been created.
              */
             initHost: function() {
             },
@@ -453,8 +463,10 @@ module.exports = NoGapDef.component({
                 },
 
                 /**
-                 * Called after `onNewClient`, once this component is bootstrapped on the client side.
-                 * Since components can be deployed dynamically, this might happen much later, or never.
+                 * Called after `onNewClient`, once this component 
+                 * is bootstrapped on the client side.
+                 * Since components can be deployed dynamically, 
+                 * this might happen much later, or never.
                  */
                 onClientBootstrap: function() {
                 }
@@ -491,7 +503,7 @@ module.exports = NoGapDef.component({
 
             /**
              * Called after the given component has been loaded in the client.
-             * NOTE: This is mostly interesting when components are dynamically loaded.
+             * NOTE: This is important when components are dynamically loaded (`lazyLoad` = 1).
              */
             onNewComponent: function(newComponent) {
 
@@ -499,8 +511,9 @@ module.exports = NoGapDef.component({
 
             /**
              * Called after the given batch of components has been loaded in the client.
-             * This is called after `onNewComponent` has been called on each individual component.
-             * NOTE: This is mostly interesting when components are dynamically loaded.
+             * This is called after `onNewComponent` has been called 
+             * on each individual component.
+             * NOTE: This is important when components are dynamically loaded (`lazyLoad` = 1).
              */
             onNewComponents: function(newComponents) {
 
@@ -537,6 +550,7 @@ Note that the [Simple Sample App](https://github.com/Domiii/NoGap/tree/master/sa
     +-- components/
     | +-- models/
     | +-- ui/
+    | +-- util/
     +-- lib/
     +-- pub/
     +-- app.js
@@ -560,8 +574,11 @@ This folder contains the interface with your DB and possibly other storage syste
 
 ### `components/ui/`
 
-This folder contains UI-related components. That is UI controller and view code. Views are in separate files from the code, but they can be in the same folder to support modularity.
+This folder contains UI-related components. That is UI controller and view code. Views (templates and HTML files) are in files, separate from the code, but they can be in the same folder to support modularity.
 
+### `components/util/`
+
+This folder contains general-purpose utility components used on both `Client` and `Host`. They usually only contain a `Base` definition, with possible specializations in `Client` and `Host`.
 
 
 ### `app.js`
