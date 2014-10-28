@@ -197,9 +197,7 @@ NoGapDef.component({
  * `this.host` gives us an object on which we can call `Public` methods on the host
   * For example, we can call `tellClientSomething` which is a method that was defined in `Host.Public`
  * Once the host receives our request, it calls `this.client.showHostMessage`
- * Note:
-  * Client: `this.host` vs.
-  * Host: `this.client`
+ * Note: `this.host` (available on Client) vs. `this.client` (available on Host)
 
 
 ## TwoWayStreetAsync
@@ -285,6 +283,10 @@ NoGapDef.component({
 
             Files: {
                 string: {
+                    /**
+                     * The contents of `template.html` will be automatically made available to the client
+                     * through in the `assets.view` property.
+                     */
                     view: 'template.html'
                 }
             }
@@ -293,6 +295,9 @@ NoGapDef.component({
 
     Client: NoGapDef.defClient(function(Tools, Instance, Context) { return {
         initClient: function() {
+            /**
+             * Append contents of HTML asset to document.
+             */
             document.body.innerHTML += this.assets.view;
         }
     };})
@@ -300,7 +305,7 @@ NoGapDef.component({
 ```
 
 **New Concepts**
-  * So far, you can define two types of file-based assets:
+  * As of now, you can define two types of file-based assets:
     * `AutoIncludes` defines lists of `js` and `css` files that will be automatically included in the client header
     * `Files` will be read and it's contents will be available through the clients `assets` variable.
       * Currently they can only be interpreted as string. Future plans: `code`, `image` and more more more...
@@ -319,29 +324,24 @@ The [Simple Sample App](https://github.com/Domiii/NoGap/tree/master/samples/samp
 ## Dynamic Loading of Components
 <!-- [Link](samples/DynamicLoading). -->
 
-This feature lets clients request components on demand. This way, complex web applications can send code and assets not before they are needed, thus saving bandwidth and improving I/O performance.
-
-TODO: Sample not done yet...
+This feature lets clients request components on demand. This way, complex web applications can send code and assets at the time of first usage, not one moment earlier. This saves bandwidth and improves I/O performance.
  
-**New Concepts**
-  * First, set `lazyLoad` to `1` in the config
-  * Then, call `this.Tools.requestClientComponents(names, callback);` to lazily load components from `Host` or from `Client` *instance objects*.
+**How?**
+  1. Set `lazyLoad` to `1` in the config
+  2. Call `this.Tools.requestClientComponents(componentNames, callback);` to lazily load components from `Host` or from `Client` *instances*.
 
 
 ## Request &lt;-> Reply Pairs
 <!-- [Link](samples/). -->
 
-This feature 
-
-TODO: Sample not done yet...
-
-Idea:
+Code snippet:
 
     Host: {
       Public: {
         myStuff: [...],
 
         checkIn: function(sender, name) {
+          // call Client's `onReply` callback
           sender.reply('Thank you, ' + name + '!', myStuff);
         }
       }
@@ -354,6 +354,7 @@ Idea:
       // ...
 
       initClient: {
+        // call function on Host, then wait for Host to reply
         this.host.checkIn('Average Joe')
         .onReply(function(message, stuff) {
           // server sent something back
@@ -371,7 +372,8 @@ Idea:
 ## Simple Sample App
 [Link](samples/sample_app).
 
-This App shows how to start building a real application with NoGap. It uses `Angular`, `Boostrap` and `Font-Awesome` to do some real client-side rendering. IMPORTANT: None of these libraries are required. You can build your frontend and backend any way you want.
+This App shows how to start building a real application with NoGap. It uses `Angular`, `Boostrap` and `Font-Awesome` to do some real client-side rendering and client<->host communication.
+IMPORTANT: None of these libraries are required. You can build your frontend and backend any way you want.
 
 
 Component Structure
@@ -380,7 +382,7 @@ Component Structure
 
 NOTE: The following is a rough explanation of many of NoGap's features. You are recommended to compare the explanation to their actual implementation in the [Simple Sample App](samples/sample_app) to better understand them.
 
-Every component has two endpoint definitions, called `Host` and `Client`, as well as shared code, inside the so-called `Base` definition. You provide `Host`, `Client` and `Base` definitions by calling `defHost`, `defClient` and `defBase` respectively. The only argument to the `def` function is your **component definition**: A function with three arguments that returns the actual definition object.
+Every component has two endpoint definitions, called `Host` and `Client`, as well as shared code, inside the so-called `Base` definition. You provide `Host`, `Client` and `Base` definitions by calling `defHost`, `defClient` and `defBase` respectively. The only argument to these `def*` functions is your **component definition**: A function with three arguments that returns the actual definition object.
 
 ## `Host`
 `Host` has two places for defining functionality: Shared and instance. This distinction is necessary because a `Host` can be tied to multiple `Client`s. Note though that each `Client` can only be tied to a single `Host` (as of now).
