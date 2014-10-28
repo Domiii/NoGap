@@ -1,3 +1,5 @@
+[![NPM version](https://badge.fury.io/js/nogap.svg)](http://badge.fury.io/js/nogap)
+
 NoGap
 =============
 
@@ -26,6 +28,7 @@ Table of Contents
 
 <!-- toc -->
 
+* [NoGap](#nogap)
 * [HelloWorld](#helloworld)
 * [Installation](#installation)
 * [Samples](#samples)
