@@ -1,6 +1,6 @@
 {
   "name": "nogap",
-  "version": "0.4.4",
+  "version": "0.5.2",
   "author": {
     "name": "Dominik Seifert",
     "email": "contactdomisemail@gmail.com",
@@ -16,7 +16,7 @@
   },
   "license": "MIT",
   "readmeFilename": "README.md",
-  "description": "RPC + improved code sharing + asset management + some other good stuff for enjoyable Host <-> Client architecture development.",
+  "description": "NoGap is a full-stack (spans Host and Client) JavaScript framework, featuring RPC + simple code sharing + basic asset management + full-stack Promise chains and more...",
   
   "bugs": {
     "url": "https://github.com/Domiii/NoGap/issues"
