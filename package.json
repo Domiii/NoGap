@@ -1,6 +1,6 @@
 {
   "name": "nogap",
-  "version": "0.5.3",
+  "version": "0.5.5",
   "author": {
     "name": "Dominik Seifert",
     "email": "contactdomisemail@gmail.com",
@@ -15,24 +15,40 @@
     "node": ">= 0.8.0"
   },
   "license": "MIT",
-  "readmeFilename": "README.md",
   "description": "NoGap is a full-stack (spans Host and Client) JavaScript framework, featuring RPC + simple code sharing + basic asset management + full-stack Promise chains and more...",
-  
   "bugs": {
     "url": "https://github.com/Domiii/NoGap/issues"
   },
   "homepage": "https://github.com/Domiii/NoGap",
-
   "dependencies": {
     "squishy": "*",
     "mime": "*"
   },
-
   "devDependencies": {
     "marked-toc": "*"
   },
-
   "scripts": {
     "precommit": "node pre-commit"
-  }
+  },
+  "gitHead": "40e7719e8e8149e9aaabfbb5ff3b1838974a7589",
+  "_id": "nogap@0.5.3",
+  "_shasum": "25c677b4dba9b9b168234c928a06ab9830638fa2",
+  "_from": "nogap@*",
+  "_npmVersion": "1.4.28",
+  "_npmUser": {
+    "name": "domiii",
+    "email": "contactdomisemail@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "domiii",
+      "email": "contactdomisemail@gmail.com"
+    }
+  ],
+  "dist": {
+    "shasum": "25c677b4dba9b9b168234c928a06ab9830638fa2",
+    "tarball": "http://registry.npmjs.org/nogap/-/nogap-0.5.3.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/nogap/-/nogap-0.5.3.tgz"
 }
