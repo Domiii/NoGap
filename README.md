@@ -214,27 +214,48 @@ NoGap supports full-stack [Promise chains](https://github.com/petkaantonov/blueb
 Code snippet:
 
 ```js
-tellMeSomething: function(name) {
-    nBytes += (message && message.length) || 0;
-    return 'Host has received a total of ' + nBytes + ' bytes.';
-}
+var NoGapDef = require('nogap').Def;
 
-// ...
+NoGapDef.component({
+    Host: NoGapDef.defHost(function(SharedTools, Shared, SharedContext) {
+        var nBytes = 0;
 
-onButtonClick: function() {
-    document.body.innerHTML +='Button was clicked.<br />';
-    this.host.tellMeSomething('hello!')
-    .bind(this)           // this is tricky!
-    .then(function(hostMessage) {
-        this.showHostMessage(hostMessage);
-    });
-},
+        return {
+            Public: {
+                tellMeSomething: function(message) {
+				    nBytes += (message && message.length) || 0;
+				    this.Tools.log('Client said: ' + message);
+				    return 'Thank you! I now received a total of ' + nBytes + ' bytes.';
+                }
+            }
+        };
+    }),
+
+    Client: NoGapDef.defClient(function(Tools, Instance, Context) {
+        return {
+            initClient: function() {
+                // bind a button to a component function (quick + dirty):
+                window.clickMe = this.onButtonClick.bind(this);
+                document.body.innerHTML += '<button onclick="window.clickMe();">Click Me!</button><br />';
+            },
+
+            onButtonClick: function() {
+			    document.body.innerHTML +='Button was clicked.<br />';
+			    this.host.tellMeSomething('hello!')
+			    .then(function(hostMessage) {
+			    	document.body.innerHTML += 'Host said: ' + hostMessage + '<br />';
+			    });
+            }
+        };
+    })
+});
 ```
  
 **New Concepts**
+  * `Client.initClient` will be called right after the Client connected.
+  * Upon button click, we call `this.host.tellMeSomething(...)` which will send a request to the `Host` to invoke that method (given it is in `Host.Public`).
   * Calling a `Public` function on a component's `host` object returns a promise.
-  * That promise is part of a full-stack [Promise chains](https://github.com/petkaantonov/bluebird#what-are-promises-and-why-should-i-use-them). A value returned by a `Host`'s `Public` function (or by a promise returned by such function), will be received by the client.
-  * Note that [JavaScript's `this` is tricky](http://javascriptissexy.com/understand-javascripts-this-with-clarity-and-master-it/)!
+  * That promise is part of a full-stack [Promise chains](https://github.com/petkaantonov/bluebird#what-are-promises-and-why-should-i-use-them). Once finnished, we get the return value from that `Host` method in our `then` callback.
 
 
 
@@ -280,7 +301,8 @@ onButtonClick: function() {
 
 **New Concepts**
  * We need to perform an asynchronous request whose result is to be sent to the other side
-   * Simply use [Promise chains](https://github.com/petkaantonov/bluebird#what-are-promises-and-why-should-i-use-them)!
+ * Simply use [Promise chains](https://github.com/petkaantonov/bluebird#what-are-promises-and-why-should-i-use-them)!
+ * NOTE: [JavaScript's `this` is tricky](http://javascriptissexy.com/understand-javascripts-this-with-clarity-and-master-it/)!
 
 
 
