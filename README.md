@@ -244,6 +244,10 @@ NoGapDef.component({
 			    this.host.tellMeSomething('hello!')
 			    .then(function(hostMessage) {
 			    	document.body.innerHTML += 'Host said: ' + hostMessage + '<br />';
+			    })
+			    .catch(function(err) {
+			    	// this can be a connection error, a bug, a Host-side `reject` etc etc...
+			    	console.error('Something went wrong: ' + (err.stack || err));
 			    });
             }
         };
