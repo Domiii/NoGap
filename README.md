@@ -128,7 +128,7 @@ The Samples highlight some (soon, all!) features of the NoGap framework and how 
 var NoGapDef = require('nogap').Def;
 
 module.exports = NoGapDef.component({
-  Client: NoGapDef.defHost(function(Tools, Instance, Context) {
+  Client: NoGapDef.defClient(function(Tools, Instance, Context) {
     return {
       initClient: function() {
         document.body.innerHTML = 'Hello World!';
