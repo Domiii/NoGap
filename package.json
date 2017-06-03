@@ -22,7 +22,9 @@
   "homepage": "https://github.com/Domiii/NoGap",
   "dependencies": {
     "squishy": "*",
-    "mime": "*"
+    "mime": "*",
+    "express": "*",
+    "lodash": "*"
   },
   "devDependencies": {
     "marked-toc": "*"

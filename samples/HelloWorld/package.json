@@ -9,11 +9,13 @@
   },
 
   "dependencies": {
-    "express": "~4.1.0",
+    "process": "*",
+    "express": "*",
     "cookie-parser": "~1.0.1",
     "cookie": "*",
     "express-session": "*",
+    "bluebird": "*",
 
-    "nogap": "*"
+    "nogap": "file:../../"
   }
 }

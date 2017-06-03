@@ -1,7 +1,6 @@
 module.exports = {
     "httpd": {
-        "port"     : "1234",
-        "wikiUrl"  : "http://localhost:80/wiki"
+        "port"     : "1234"
     },
 
     "nogap": {

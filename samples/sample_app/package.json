@@ -17,6 +17,7 @@
     "log4js": "*",
     
     "squishy": "*",
-    "nogap": "*"
+    "bluebird": "*",
+    "nogap": "file:../.."
   }
 }
