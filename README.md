@@ -699,6 +699,9 @@ The following is an example of a `NoGap` configuration. It requires at least two
  * `files`
   * The actual component files (sans ".js"). Whenever you add a component, don't forget to list it here!
 
+* [Here](https://github.com/Domiii/NoGap/blob/8c4974eca2082efe034db5bd2c7e87174281b8c3/samples/sample_app/appConfig.js) is an example of a sample `appConfig.js`.
+
+* [Here](https://github.com/aisman64/peoplecounter/blob/master/server/appConfig.js#L219) is an example of a config file for a web app that controls an arbitrary amount of IOT devices which analyze and record WiFi SSID packets and send them to the server for analysis. The devices are controlled through the web interface. The devices also run `NoGap` to exchange data with the server, and also, to automatically update their code when new code is available and the devices is not busy or an admin forces an update through the web interface. The auto-updater is fault tolerant.
 
 #### Optional Configuration parameters
 
